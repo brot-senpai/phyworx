@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/phyworx/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/phyworx/static/js/main.14903e60.chunk.js",
+    "main.js.map": "/phyworx/static/js/main.14903e60.chunk.js.map",
+    "runtime-main.js": "/phyworx/static/js/runtime-main.76cb2757.js",
+    "runtime-main.js.map": "/phyworx/static/js/runtime-main.76cb2757.js.map",
+    "static/js/2.acefa77a.chunk.js": "/phyworx/static/js/2.acefa77a.chunk.js",
+    "static/js/2.acefa77a.chunk.js.map": "/phyworx/static/js/2.acefa77a.chunk.js.map",
+    "static/js/3.274941f1.chunk.js": "/phyworx/static/js/3.274941f1.chunk.js",
+    "static/js/3.274941f1.chunk.js.map": "/phyworx/static/js/3.274941f1.chunk.js.map",
+    "index.html": "/phyworx/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/phyworx/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.acefa77a.chunk.js.LICENSE.txt": "/phyworx/static/js/2.acefa77a.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/phyworx/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76cb2757.js",
+    "static/js/2.acefa77a.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.14903e60.chunk.js"
+  ]
+}
