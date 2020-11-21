@@ -3,7 +3,8 @@ import logo from '../../img/bread.svg';
 
 const imgStyle = {
     color: "#000000",
-    height: 600,
+    width: "100%",
+    height: "20em",
     WebkitFilter: "invert(100%)",
     filter: "invert(100%)"
     
@@ -11,7 +12,7 @@ const imgStyle = {
 
 function Home(props) {
     return(
-        <div style={{backgroundColor: "#000000"}}>
+        <div >
             <img src={logo} alt="brot-senpai" style={imgStyle}/>
         </div>
     )

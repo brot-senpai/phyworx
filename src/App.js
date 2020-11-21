@@ -1,38 +1,21 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link, 
-} from "react-router-dom";
+
 
 import Header from "./components/header/header";
-import ThreeApp from "./components/three_app/threeApp";
-import Home from "./components/home/home";
+
+
+const contStyle = {
+  backgroundColor: "#000",
+  width: "100%",
+  height: "100%"
+}
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Header />
-        {/* <Router>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/three">Three</Link>
-            </li>
-          </ul>
-          <Switch>
-            <Route exact path="/" >
-              <Home/>
-            </Route>
-            <Route path="/three">
-              <ThreeApp/>
-            </Route>
-          </Switch>
-        </Router> */}
       </header>
     </div>
   );
