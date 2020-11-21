@@ -1,4 +1,3 @@
-
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -7,6 +6,7 @@ import {
   Link, 
 } from "react-router-dom";
 
+import Header from "./components/header/header";
 import ThreeApp from "./components/three_app/threeApp";
 import Home from "./components/home/home";
 
@@ -14,7 +14,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router>
+        <Header />
+        {/* <Router>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -31,7 +32,7 @@ function App() {
               <ThreeApp/>
             </Route>
           </Switch>
-        </Router>
+        </Router> */}
       </header>
     </div>
   );
