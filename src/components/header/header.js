@@ -15,11 +15,11 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
 
 import Home from '../home/home';
+import ThreeApp from '../three_app/threeApp';
+import Atom from '../../img/atom.svg';
 
 import {
     BrowserRouter as Router,
@@ -151,43 +151,34 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <Link to="/phyworx/" style={{ textDecoration: 'none' }}>
-        <ListItem button key='Home'>
-          
+        <ListItem button key='Home'>          
           <ListItemIcon>
               <HomeIcon />
           </ListItemIcon>
-          <ListItemText >Home</ListItemText>
-          
+          <ListItemText >Home</ListItemText>          
         </ListItem>
         </Link>
-        {/* <List>
-          {['Home', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <HomeIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-        
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <Link to="/phyworx/three" style={{ textDecoration: 'none' }}>
+        <ListItem button key='Three'>        
+          <ListItemIcon>
+              <img src={Atom} alt="atomicon" height="25"/>
+          </ListItemIcon>
+          <ListItemText >WebGL</ListItemText>        
+        </ListItem>
+        </Link>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
             <Route exact path="/phyworx/" >
               <Home/>
-            </Route>            
-          </Switch>
-        <Typography paragraph>
-          
+            </Route>      
+            <Route path="/phyworx/three" >
+              <ThreeApp/>
+            </Route>        
+        </Switch>
+        <Typography paragraph>          
         </Typography>
       </main>
       </Router>
