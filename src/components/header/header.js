@@ -149,7 +149,7 @@ export default function MiniDrawer() {
           </IconButton>
         </div>
         <Divider />
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx/home" style={{ textDecoration: 'none' }}>
         <ListItem button key='Home'>
           
           <ListItemIcon>
@@ -181,10 +181,9 @@ export default function MiniDrawer() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-            <Route exact path="/" >
+            <Route exact path="/phyworx/home" >
               <Home/>
-            </Route>
-            
+            </Route>            
           </Switch>
         <Typography paragraph>
           
