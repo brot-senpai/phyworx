@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/phyworx/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/phyworx/static/js/main.9e62a7b4.chunk.js",
-    "main.js.map": "/phyworx/static/js/main.9e62a7b4.chunk.js.map",
-    "runtime-main.js": "/phyworx/static/js/runtime-main.76cb2757.js",
-    "runtime-main.js.map": "/phyworx/static/js/runtime-main.76cb2757.js.map",
-    "static/js/2.20f0c3c4.chunk.js": "/phyworx/static/js/2.20f0c3c4.chunk.js",
-    "static/js/2.20f0c3c4.chunk.js.map": "/phyworx/static/js/2.20f0c3c4.chunk.js.map",
-    "static/js/3.274941f1.chunk.js": "/phyworx/static/js/3.274941f1.chunk.js",
-    "static/js/3.274941f1.chunk.js.map": "/phyworx/static/js/3.274941f1.chunk.js.map",
+    "main.css": "/phyworx/static/css/main.41cc5c63.chunk.css",
+    "main.js": "/phyworx/static/js/main.297e1afd.chunk.js",
+    "main.js.map": "/phyworx/static/js/main.297e1afd.chunk.js.map",
+    "runtime-main.js": "/phyworx/static/js/runtime-main.c369c55c.js",
+    "runtime-main.js.map": "/phyworx/static/js/runtime-main.c369c55c.js.map",
+    "static/js/2.bc762266.chunk.js": "/phyworx/static/js/2.bc762266.chunk.js",
+    "static/js/2.bc762266.chunk.js.map": "/phyworx/static/js/2.bc762266.chunk.js.map",
+    "static/js/3.297cb232.chunk.js": "/phyworx/static/js/3.297cb232.chunk.js",
+    "static/js/3.297cb232.chunk.js.map": "/phyworx/static/js/3.297cb232.chunk.js.map",
     "index.html": "/phyworx/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/phyworx/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.20f0c3c4.chunk.js.LICENSE.txt": "/phyworx/static/js/2.20f0c3c4.chunk.js.LICENSE.txt",
-    "static/media/brot.026034bb.jpg": "/phyworx/static/media/brot.026034bb.jpg"
+    "static/css/main.41cc5c63.chunk.css.map": "/phyworx/static/css/main.41cc5c63.chunk.css.map",
+    "static/js/2.bc762266.chunk.js.LICENSE.txt": "/phyworx/static/js/2.bc762266.chunk.js.LICENSE.txt",
+    "static/media/bread.8b88b577.svg": "/phyworx/static/media/bread.8b88b577.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.76cb2757.js",
-    "static/js/2.20f0c3c4.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.9e62a7b4.chunk.js"
+    "static/js/runtime-main.c369c55c.js",
+    "static/js/2.bc762266.chunk.js",
+    "static/css/main.41cc5c63.chunk.css",
+    "static/js/main.297e1afd.chunk.js"
   ]
 }
