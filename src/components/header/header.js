@@ -159,7 +159,7 @@ export default function MiniDrawer() {
         </ListItem>
         </Link>
         <Divider />
-        <Link to="/phyworx/three" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx/three/" style={{ textDecoration: 'none' }}>
         <ListItem button key='Three'>        
           <ListItemIcon>
               <img src={Atom} alt="atomicon" height="25"/>
@@ -174,8 +174,8 @@ export default function MiniDrawer() {
             <Route exact path="/phyworx/" >
               <Home/>
             </Route>      
-            <Route path="/phyworx/three" >
-              <ThreeApp/>
+            <Route path="/phyworx/three/" >
+              <ThreeApp />
             </Route>        
         </Switch>
         <Typography paragraph>          
