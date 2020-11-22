@@ -1,8 +1,8 @@
 import React from "react";
 
-//import Box from './box';
+import Box from './box';
 //import Physics from './physics';
-import Gestures from './gestures';
+//import Gestures from './gestures';
 
 const divStyle = {
     width: 600,
@@ -13,7 +13,7 @@ const ThreeApp = () => {
     
     return(
         <div style={divStyle}>
-            <Gestures />
+            <Box />
         </div>
     )
 }

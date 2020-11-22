@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://brot-senpai.github.io/phyworx",
   "dependencies": {
+    "@babylonjs/core": "^4.2.0",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@react-spring/three": "^9.0.0-rc.3",

@@ -19,7 +19,9 @@ import HomeIcon from '@material-ui/icons/Home';
 
 import Home from '../home/home';
 import ThreeApp from '../three_app/threeApp';
+import BabylonApp from '../babylon/babylonTest';
 import Atom from '../../img/atom.svg';
+import BabylonIcon from '../../img/babylon_gray2.svg';
 
 import {
     BrowserRouter as Router,
@@ -158,11 +160,19 @@ export default function MiniDrawer() {
           <ListItemText >Home</ListItemText>          
         </ListItem>
         </Link>
+        <Link to="/phyworx/babylon/" style={{ textDecoration: 'none' }}>
+        <ListItem button key='Babylon' >        
+          <ListItemIcon >
+              <img src={ BabylonIcon } alt="atomicon" height="25"/>
+          </ListItemIcon>
+          <ListItemText >Babylon</ListItemText>        
+        </ListItem>
+        </Link>
         <Divider />
         <Link to="/phyworx/three/" style={{ textDecoration: 'none' }}>
         <ListItem button key='Three'>        
           <ListItemIcon>
-              <img src={Atom} alt="atomicon" height="25"/>
+              <img src={ Atom } alt="atomicon" height="25"/>
           </ListItemIcon>
           <ListItemText >WebGL</ListItemText>        
         </ListItem>
@@ -174,6 +184,9 @@ export default function MiniDrawer() {
             <Route exact path="/phyworx/" >
               <Home/>
             </Route>      
+            <Route path="/phyworx/babylon/" >
+              <BabylonApp />
+            </Route> 
             <Route path="/phyworx/three/" >
               <ThreeApp />
             </Route>        
