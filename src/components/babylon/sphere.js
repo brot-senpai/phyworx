@@ -14,7 +14,7 @@ const onSceneReady = scene =>{
     camera.attachControl(canvas, true);
     var light = new HemisphericLight("light", new Vector3(0,1,0), scene);
     light.intensity = 0.7;
-    box = MeshBuilder.CreateBox("box", {size:2}, scene);
+    box = MeshBuilder.CreateSphere("sphere", {diameter:2,segments:32}, scene);
     box.position.y =1;
     MeshBuilder.CreateGround("ground", {width:6,height:6}, scene);
 

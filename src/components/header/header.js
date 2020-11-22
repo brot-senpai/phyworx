@@ -19,7 +19,7 @@ import HomeIcon from '@material-ui/icons/Home';
 
 import Home from '../home/home';
 import ThreeApp from '../three_app/threeApp';
-import BabylonApp from '../babylon/babylonTest';
+import BabylonApp from '../babylon/particleSun';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 
