@@ -4,7 +4,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -152,7 +151,7 @@ export default function MiniDrawer() {
           </IconButton>
         </div>
         <Divider />
-        <Link to="/phyworx/" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx" style={{ textDecoration: 'none' }}>
         <ListItem button key='Home'>          
           <ListItemIcon>
               <HomeIcon />
@@ -160,16 +159,16 @@ export default function MiniDrawer() {
           <ListItemText >Home</ListItemText>          
         </ListItem>
         </Link>
-        <Link to="/phyworx/babylon/" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx/babylon" style={{ textDecoration: 'none' }}>
         <ListItem button key='Babylon' >        
           <ListItemIcon >
-              <img src={ BabylonIcon } alt="atomicon" height="25"/>
+              <img src={ BabylonIcon } alt="babylonicon" height="25"/>
           </ListItemIcon>
           <ListItemText >Babylon</ListItemText>        
         </ListItem>
         </Link>
         <Divider />
-        <Link to="/phyworx/three/" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx/three" style={{ textDecoration: 'none' }}>
         <ListItem button key='Three'>        
           <ListItemIcon>
               <img src={ Atom } alt="atomicon" height="25"/>
@@ -181,13 +180,13 @@ export default function MiniDrawer() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-            <Route exact path="/phyworx/" >
+            <Route exact path="/phyworx" >
               <Home/>
             </Route>      
-            <Route path="/phyworx/babylon/" >
+            <Route path="/phyworx/babylon" >
               <BabylonApp />
             </Route> 
-            <Route path="/phyworx/three/" >
+            <Route path="/phyworx/three" >
               <ThreeApp />
             </Route>        
         </Switch>
