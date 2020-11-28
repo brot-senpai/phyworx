@@ -10,6 +10,7 @@ export default (props) => {
         if(reactCanvas.current){
             const engine = new Engine(reactCanvas.current, antialias,
                 engineOptions, adaptToDeviceRatio);
+            engine.resize();
             const scene = new Scene(engine, sceneOptions);
             if(scene.isReady()){
                 props.onSceneReady(scene)
@@ -42,7 +43,9 @@ export default (props) => {
     }, [reactCanvas])
 
     return(
-        <canvas width="400" height="600"ref={reactCanvas} {...rest} />
+        
+        <canvas width={window.innerWidth} height={window.innerHeight} ref={reactCanvas} {...rest} />
+        
     )
 
 }

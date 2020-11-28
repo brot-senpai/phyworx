@@ -14,19 +14,12 @@ import { AdvancedDynamicTexture, Slider, Control } from "@babylonjs/gui";
 import SceneComponent from './sceneComponent';
 
 
-const onSceneReady = scene =>{
-    var camera = new ArcRotateCamera("Camera", 3 * Math.PI / 2, 
-        3 * Math.PI / 8, 30, Vector3.Zero());
-    scene.clearColor = Color3.Black();
-    const canvas = scene.getEngine().getRenderingCanvas();
-    camera.attachControl(canvas, true);
-    var light = new HemisphericLight("light", new Vector3(0,1,0), scene);
-    light.intensity = 0.7;
-
+var gridGen =(props)=>{
+    var {scene, psize} = props;
     var grid = new GridMaterial("grid", scene);	
     grid.gridRatio = 1;
-
-    var psize = 1;
+    grid.opacity = 0.99;
+    grid.lineColor = Color3.Black();
 
     const xPlane = Plane.FromPositionAndNormal(new Vector3(0, 0, 0), new Vector3(1, 0, 0));
     const yPlane = Plane.FromPositionAndNormal(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -38,8 +31,21 @@ const onSceneReady = scene =>{
     planex.material = grid;
     planey.material = grid;
     planez.material = grid;
+    return [planex, planey, planez, grid];
+}
+
+const onSceneReady = scene =>{
+    var camera = new ArcRotateCamera("Camera", 3 * Math.PI / 2, 
+        3 * Math.PI / 8, 30, Vector3.Zero());
+    scene.clearColor = Color3.White();
+    const canvas = scene.getEngine().getRenderingCanvas();
+    camera.attachControl(canvas, true);
+    var light = new HemisphericLight("light", new Vector3(0,1,0), scene);
+    light.intensity = 0.7;
+
     
     
+    var psize = 1; 
 
     var showAxis = function(size) {
     var makeTextPlane = function(text, color, size) {
@@ -68,29 +74,33 @@ const onSceneReady = scene =>{
         new Vector3(0, size, 0), new Vector3( 0.05 * size, size * 0.95, 0)
         ], scene);
     axisY.color = new Color3(0, 1, 0);
-    var yChar = makeTextPlane("Y", "green", size / 5);
+    var yChar = makeTextPlane("U", "green", size / 5);
     yChar.position = new Vector3(0, 0.9 * size, 0.1 * size);
     var axisZ = Mesh.CreateLines("axisZ", [
         new Vector3.Zero(), new Vector3(0, 0, size), new Vector3( 0 , -0.05 * size, size * 0.95),
         new Vector3(0, 0, size), new Vector3( 0, 0.05 * size, size * 0.95)
         ], scene);
     axisZ.color = new Color3(0, 0, 1);
-    var zChar = makeTextPlane("Z", "blue", size / 5);
+    var zChar = makeTextPlane("T", "blue", size / 5);
     zChar.position = new Vector3(size, 0.05 * size, 0.9 * size);
 
-    
+    var planes = gridGen({scene, psize});
+    var planex = planes[0];
+    var planey = planes[1];
+    var planez = planes[2];
+    var grid = planes[3];
 
     var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
     var slider = new Slider();
-        slider.minimum = 5;
+        slider.minimum = 1;
         slider.maximum = 100;
-        slider.value = 5;
+        slider.value = 1;
         slider.height = "20px";
         slider.width = "200px";
         slider.color = "#003399";
         slider.background = "grey";
-        slider.left = "20px";
-        slider.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
+        slider.top= "20px";
+        slider.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
         slider.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         slider.onValueChangedObservable.add(function (value) {
             axisX.scaling.x = value/2;
@@ -115,12 +125,12 @@ const onSceneReady = scene =>{
             zChar.scaling.x = value/2;
             zChar.scaling.y = value/2;
             zChar.position.x = value/1.85;
-            zChar.position.z = value;           
+            zChar.position.z = value;        
             
             
         });
     
-    advancedTexture.addControl(slider);  
+    advancedTexture.addControl(slider);   
     
   };
   showAxis(psize);
