@@ -19,6 +19,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import Home from '../home/home';
 import ThreeApp from '../three_app/threeApp';
 import BabylonApp from '../babylon/particleSun';
+import Grid from '../babylon/grid';
+import DynamicGrid from '../babylon/dynamicGrid';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 
@@ -184,7 +186,7 @@ export default function MiniDrawer() {
               <Home/>
             </Route>      
             <Route path="/phyworx/babylon" >
-              <BabylonApp />
+              <DynamicGrid />
             </Route> 
             <Route path="/phyworx/three" >
               <ThreeApp />
