@@ -42,7 +42,7 @@ export default (props) => {
     }, [reactCanvas])
 
     return(
-        <canvas width="700" height="700" ref={reactCanvas} {...rest} />
+        <canvas width="400" height="600"ref={reactCanvas} {...rest} />
     )
 
 }

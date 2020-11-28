@@ -91,7 +91,7 @@ const onSceneReady = scene =>{
         slider.background = "grey";
         slider.left = "10px";
         slider.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
-        slider.verticalAlignment = Control.VERTICAL_ALIGNMENT_BOTTOM;
+        slider.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         slider.onValueChangedObservable.add(function (value) {
             axisX.scaling.x = value/2;
             axisY.scaling.y = value/2;
