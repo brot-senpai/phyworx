@@ -183,7 +183,7 @@ export default function MiniDrawer() {
         <div className={classes.toolbar} />
         <Switch>
             <Route exact path="/phyworx" >
-              <Home/>
+            <DynamicGrid />
             </Route>      
             <Route path="/phyworx/babylon" >
               <DynamicGrid />

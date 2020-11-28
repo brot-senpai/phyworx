@@ -89,7 +89,7 @@ const onSceneReady = scene =>{
         slider.width = "200px";
         slider.color = "#003399";
         slider.background = "grey";
-        slider.left = "10px";
+        slider.left = "20px";
         slider.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
         slider.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         slider.onValueChangedObservable.add(function (value) {
