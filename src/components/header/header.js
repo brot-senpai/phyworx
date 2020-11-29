@@ -16,19 +16,20 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
 
-import Home from '../home/home';
+//import Home from '../home/home';
 import ThreeApp from '../three_app/threeApp';
-import BabylonApp from '../babylon/particleSun';
-import Grid from '../babylon/grid';
+//import BabylonApp from '../babylon/particleSun';
+//import Grid from '../babylon/grid';
 import DynamicGrid from '../babylon/dynamicGrid';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 
 import {
-    BrowserRouter as Router,
+    //BrowserRouter as Router,
     Switch,
     Route,
     Link, 
+    HashRouter,
   } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -133,7 +134,7 @@ export default function MiniDrawer() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Router>
+      <HashRouter>
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -195,7 +196,7 @@ export default function MiniDrawer() {
         <Typography paragraph>          
         </Typography>
       </main>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
