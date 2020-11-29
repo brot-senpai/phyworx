@@ -18,7 +18,7 @@ Author: Khan Tran
 
 ### Other Dependencies
 
-..* Take a peak at *package.json* file for a full list of misc. dependencies. 
+* Take a peak at *package.json* file for a full list of misc. dependencies. 
 
 
 
