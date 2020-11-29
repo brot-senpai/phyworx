@@ -2,16 +2,13 @@ import React from 'react';
 import { ArcRotateCamera, 
     Vector3, 
     HemisphericLight, 
-    DynamicTexture,
-    Mesh,
-    StandardMaterial,
     Color3, 
     } from '@babylonjs/core';
 import { AdvancedDynamicTexture, Slider, Control } from "@babylonjs/gui";
 import SceneComponent from '../sceneComponent';
 import Grid from './grid';
-import Axis from '../axis/axis';
-import { a } from '@react-spring/three';
+import {Axis} from '../axis/axis';
+
 
 const onSceneReady = scene =>{
   var camera = new ArcRotateCamera("Camera", 3 * Math.PI / 2, 
@@ -23,21 +20,22 @@ const onSceneReady = scene =>{
   light.intensity = 0.7;
 
   
-  var psize = 10; 
+  var psize = 1; 
 
-  var grid = Grid(scene, psize);
-  var axis = Axis(scene, psize);
+  var plane = Grid(scene, psize);
   
-  var planex = grid[0];
-  var planey = grid[1];
-  var planez = grid[2];
+  
+  var planex = plane[0];
+  var planey = plane[1];
+  var planez = plane[2];
+  var grid = plane[3];
 
-  var axisX = axis[0];
+/*   var axisX = axis[0];
   var xChar = axis[1];
   var axisY = axis[2];
   var yChar = axis[3];
   var axisZ = axis[4];
-  var zChar = axis[5];
+  var zChar = axis[5]; */
   
   var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
     var slider = new Slider();
@@ -52,9 +50,19 @@ const onSceneReady = scene =>{
         slider.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_CENTER;
         slider.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
         slider.onValueChangedObservable.add(function (value) {
-            axisX.scaling.x = value/2;
+            /* axisX.scaling.x = value/2;
             axisY.scaling.y = value/2;
             axisZ.scaling.z = value/2;
+            xChar.scaling.x = value/2;
+            xChar.scaling.y = value/2;
+            xChar.position.x = value/2;
+            yChar.scaling.x = value/2;
+            yChar.scaling.y = value/2;
+            yChar.position.y = value/2;
+            zChar.scaling.x = value/2;
+            zChar.scaling.y = value/2;
+            zChar.position.x = value/1.85;
+            zChar.position.z = value;  */     
             grid.gridRatio = 1/value;
             planex.scaling.x = value;
             planex.scaling.y = value;
@@ -65,21 +73,13 @@ const onSceneReady = scene =>{
             planex.position.z =value/2;
             planey.position.z = value/2
             planez.position.z = value;
-            xChar.scaling.x = value/2;
-            xChar.scaling.y = value/2;
-            xChar.position.x = value/2;
-            yChar.scaling.x = value/2;
-            yChar.scaling.y = value/2;
-            yChar.position.y = value/2;
-            zChar.scaling.x = value/2;
-            zChar.scaling.y = value/2;
-            zChar.position.x = value/1.85;
-            zChar.position.z = value;        
+              
             
             
         });
     
     advancedTexture.addControl(slider); 
+    Axis(scene, psize);
 
 }
 

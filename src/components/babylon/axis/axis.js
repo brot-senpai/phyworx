@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { 
     Vector3, 
     DynamicTexture,
@@ -9,9 +9,9 @@ import {
 
 
 
-export default function(props) {
+export var Axis =(props)=> {
 
-  const { scene, size } = props;
+  var { scene, size } = props;
 
   var makeTextPlane = function(text, color, size) {
   var dynamicTexture = new DynamicTexture("DynamicTexture", 50, scene, true);
@@ -48,8 +48,9 @@ export default function(props) {
   var zChar = makeTextPlane("T", "blue", size / 5);
   zChar.position = new Vector3(size, 0.05 * size, 0.9 * size);
 
-  return [axisX, xChar,
+/*   return [axisX, xChar,
           axisY, yChar,
           axisZ, zChar
-        ]
+        ] */
   }
+
