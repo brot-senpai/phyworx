@@ -21,6 +21,7 @@ import ThreeApp from '../three_app/threeApp';
 import BabylonApp from '../babylon/particleSun';
 //import Grid from '../babylon/grid';
 import DynamicGrid from '../babylon/dynamicGrid';
+import GridComp from '../babylon/grid/gridComponent';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 
@@ -93,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   content: {
+    overflow: "hidden",
     flexGrow: 1,
     padding: theme.spacing(3),
   },

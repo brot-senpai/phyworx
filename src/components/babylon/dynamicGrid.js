@@ -19,7 +19,7 @@ var gridGen =(props)=>{
     var grid = new GridMaterial("grid", scene);	
     grid.gridRatio = 1;
     grid.opacity = 0.99;
-    grid.lineColor = Color3.Black();
+    grid.lineColor = Color3.Gray();
 
     const xPlane = Plane.FromPositionAndNormal(new Vector3(0, 0, 0), new Vector3(1, 0, 0));
     const yPlane = Plane.FromPositionAndNormal(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -43,7 +43,6 @@ const onSceneReady = scene =>{
     var light = new HemisphericLight("light", new Vector3(0,1,0), scene);
     light.intensity = 0.7;
 
-    
     
     var psize = 1; 
 
