@@ -21,7 +21,7 @@ import ThreeApp from '../three_app/threeApp';
 import BabylonApp from '../babylon/particleSun';
 //import Grid from '../babylon/grid';
 import DynamicGrid from '../babylon/dynamicGrid';
-import GridComp from '../babylon/grid/gridComponent';
+import GLB from '../babylon/glbLoader';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 
@@ -189,7 +189,7 @@ export default function MiniDrawer() {
             <DynamicGrid />
             </Route>      
             <Route path="/phyworx/babylon" >
-              <BabylonApp />
+              <GLB />
             </Route> 
             <Route path="/phyworx/three" >
               <ThreeApp />
