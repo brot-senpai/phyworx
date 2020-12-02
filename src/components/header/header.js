@@ -18,7 +18,8 @@ import HomeIcon from '@material-ui/icons/Home';
 
 //import Home from '../home/home';
 import ThreeApp from '../three_app/threeApp';
-import BabylonApp from '../babylon/particleSun';
+import PhysicsWorld from '../babylon/physworld/physworld';
+//import BabylonApp from '../babylon/particleSun';
 //import Grid from '../babylon/grid';
 import DynamicGrid from '../babylon/dynamicGrid';
 import GLB from '../babylon/glbLoader';
@@ -173,12 +174,12 @@ export default function MiniDrawer() {
         </ListItem>
         </Link>
         <Divider />
-        <Link to="/phyworx/three" style={{ textDecoration: 'none' }}>
+        <Link to="/phyworx/physims" style={{ textDecoration: 'none' }}>
         <ListItem button key='Three'>        
           <ListItemIcon>
               <img src={ Atom } alt="atomicon" height="25"/>
           </ListItemIcon>
-          <ListItemText >WebGL</ListItemText>        
+          <ListItemText >Physic Sims</ListItemText>        
         </ListItem>
         </Link>
       </Drawer>
@@ -191,8 +192,8 @@ export default function MiniDrawer() {
             <Route path="/phyworx/babylon" >
               <GLB />
             </Route> 
-            <Route path="/phyworx/three" >
-              <ThreeApp />
+            <Route path="/phyworx/physims" >
+              <PhysicsWorld />
             </Route>        
         </Switch>
         <Typography paragraph>          

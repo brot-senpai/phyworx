@@ -8,7 +8,6 @@ import { ArcRotateCamera,
     } from '@babylonjs/core';
 import SceneComponent from './sceneComponent';
 import { GLTFFileLoader } from 'babylonjs-loaders';
-import { GradientMaterial } from '@babylonjs/materials';
 
 
 const onSceneReady = scene =>{
@@ -25,7 +24,7 @@ const onSceneReady = scene =>{
     GLTFFileLoader.IncrementalLoading = false;
     
     
-   const star = SceneLoader.Append(process.env.PUBLIC_URL + '/assets/', "sol.glb" , scene, function (scene) {
+   SceneLoader.Append(process.env.PUBLIC_URL + '/assets/', "sol.glb" , scene, function (scene) {
       
       scene.createDefaultCameraOrLight(true, true, true);
 
