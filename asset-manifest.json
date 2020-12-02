@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/phyworx/static/css/main.d316c861.chunk.css",
-    "main.js": "/phyworx/static/js/main.fa52bb4d.chunk.js",
-    "main.js.map": "/phyworx/static/js/main.fa52bb4d.chunk.js.map",
+    "main.js": "/phyworx/static/js/main.362034b9.chunk.js",
+    "main.js.map": "/phyworx/static/js/main.362034b9.chunk.js.map",
     "runtime-main.js": "/phyworx/static/js/runtime-main.667f07f3.js",
     "runtime-main.js.map": "/phyworx/static/js/runtime-main.667f07f3.js.map",
     "static/js/2.79d27288.chunk.js": "/phyworx/static/js/2.79d27288.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.667f07f3.js",
     "static/js/2.79d27288.chunk.js",
     "static/css/main.d316c861.chunk.css",
-    "static/js/main.fa52bb4d.chunk.js"
+    "static/js/main.362034b9.chunk.js"
   ]
 }
