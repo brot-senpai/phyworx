@@ -2,7 +2,7 @@
 
 A Math and Physics visualization playground.
 
-Live site: https://brot-senpai.github.io/phyworx/#/phyworx
+Live site: https://brot-senpai.github.io/phyworx/#/
 
 Author: Khan Tran
 

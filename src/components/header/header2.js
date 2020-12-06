@@ -140,7 +140,7 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </div>
         <Divider />
-        <Link to="/phyworx" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
         <ListItem button key='Home'>          
           <ListItemIcon>
               <HomeIcon />
@@ -169,13 +169,13 @@ export default function PersistentDrawerLeft() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>            
-            <Route exact path="/phyworx" >
+            <Route exact path="/" >
             <Home />
             </Route>      
-            <Route path="/phyworx/babylon" >
+            <Route path="/phyworx/math" >
               <GLB />
             </Route> 
-            <Route path="/phyworx/physims" >
+            <Route path="/phyworx/physics" >
               <PhysicsWorld />
             </Route>        
         </Switch>
