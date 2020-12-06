@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/phyworx/static/css/main.e6b6e776.chunk.css",
-    "main.js": "/phyworx/static/js/main.fa3b909b.chunk.js",
-    "main.js.map": "/phyworx/static/js/main.fa3b909b.chunk.js.map",
+    "main.css": "/phyworx/static/css/main.9c66da3f.chunk.css",
+    "main.js": "/phyworx/static/js/main.aa0f4061.chunk.js",
+    "main.js.map": "/phyworx/static/js/main.aa0f4061.chunk.js.map",
     "runtime-main.js": "/phyworx/static/js/runtime-main.8c28ac98.js",
     "runtime-main.js.map": "/phyworx/static/js/runtime-main.8c28ac98.js.map",
     "static/js/2.4737ece1.chunk.js": "/phyworx/static/js/2.4737ece1.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.39dfe005.chunk.js": "/phyworx/static/js/3.39dfe005.chunk.js",
     "static/js/3.39dfe005.chunk.js.map": "/phyworx/static/js/3.39dfe005.chunk.js.map",
     "index.html": "/phyworx/index.html",
-    "static/css/main.e6b6e776.chunk.css.map": "/phyworx/static/css/main.e6b6e776.chunk.css.map",
+    "static/css/main.9c66da3f.chunk.css.map": "/phyworx/static/css/main.9c66da3f.chunk.css.map",
     "static/js/2.4737ece1.chunk.js.LICENSE.txt": "/phyworx/static/js/2.4737ece1.chunk.js.LICENSE.txt",
     "static/media/atom.1651bc53.svg": "/phyworx/static/media/atom.1651bc53.svg",
     "static/media/babylon_gray2.a3cbb95f.svg": "/phyworx/static/media/babylon_gray2.a3cbb95f.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.8c28ac98.js",
     "static/js/2.4737ece1.chunk.js",
-    "static/css/main.e6b6e776.chunk.css",
-    "static/js/main.fa3b909b.chunk.js"
+    "static/css/main.9c66da3f.chunk.css",
+    "static/js/main.aa0f4061.chunk.js"
   ]
 }
