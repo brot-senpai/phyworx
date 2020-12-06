@@ -46,8 +46,8 @@ export default (props) => {
         
         <canvas 
         
-        width={window.innerWidth-120} 
-        height={window.innerHeight-125} 
+        width={window.innerWidth-50} 
+        height={window.innerHeight-50} 
         ref={reactCanvas} {...rest} />
         
     )
