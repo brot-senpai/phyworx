@@ -48,6 +48,7 @@ const onSceneReady = scene =>{
     })
 
     var alpha = Math.PI;
+    var gamma = Math.PI;
     // Create a mesh for the trail to follow.
     
     var p1 = MeshBuilder.CreateSphere("p1", 
@@ -95,20 +96,19 @@ const onSceneReady = scene =>{
     var trail = new TrailMesh('new', p3, scene, .25, 250, true);
     var sourceMat = new StandardMaterial('sourceMat', scene);
     sourceMat.emissiveColor = new Color3.White();
-    //sourceMat.diffuseColor = new Color3.Red();
-    //sourceMat.specularColor = new Color3.Black();
     trail.material = sourceMat;
     const observer = scene.onBeforeRenderObservable.add(animate);
     function animate() {
         alpha += Math.PI/120;
+        gamma += Math.PI/60;
         p3.position.x = Math.sin(alpha)*10;
-        p3.position.z = Math.cos(alpha)*10;
+        p3.position.z = Math.cos(alpha)*13;
         
-        p1.position.x = Math.sin(alpha)*10;
-        p1.position.y = Math.cos(alpha)*10;
-        p1.position.z = Math.cos(alpha)*10;
+        p1.position.x = Math.sin(gamma)*10;
+        p1.position.y = Math.cos(gamma)*9;
+        p1.position.z = Math.cos(gamma)*10;
         p2.position.x = Math.cos(alpha)*-10;
-        p2.position.y = Math.sin(alpha)*-10;
+        p2.position.y = Math.sin(alpha)*-9;
         p2.position.z = Math.sin(alpha)*10;
         //beta += Math.PI/5;
         //camera.position = new Vector3(Math.sin(beta), 1.2, 35)

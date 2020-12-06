@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { 
     Color3,
     Vector3, 
@@ -78,7 +78,7 @@ export default (scene) =>{
     label2.text = sphere2.physicsImpostor.getLinearVelocity()._x +' m/s';    
     rect2.addControl(label2);
 
-    var t = window.setInterval(timer, 1000);
+    var t = window.setInterval(timer, 100);
     function timer(){
       label2.text = sphere2.physicsImpostor.getLinearVelocity()._x.toFixed(2) +' m/s';
       label1.text = sphere1.physicsImpostor.getLinearVelocity()._x.toFixed(2) +' m/s';

@@ -1,14 +1,14 @@
-import React from 'react';
+//import React from 'react';
 import { AdvancedDynamicTexture,
-  DisplayGrid,
+
   Control,
   Button,
   CheckboxGroup,
   SelectionPanel,
   } from "@babylonjs/gui";
-import { Color3,
+/* import { Color3,
   Vector3,
-} from "@babylonjs/core";
+} from "@babylonjs/core"; */
 
 export default  (props) => {
 

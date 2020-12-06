@@ -1,6 +1,8 @@
 import { Engine, Scene } from '@babylonjs/core';
 import React, { useEffect, useRef } from 'react';
 
+import '../../App.css'
+
 export default (props) => {
     const reactCanvas = useRef(null);
     const { antialias, engineOptions, adaptToDeviceRatio, sceneOptions, 
@@ -28,6 +30,7 @@ export default (props) => {
 
             const resize = () =>{
                 scene.getEngine().resize();
+                
             }
 
             if(window){
@@ -44,9 +47,8 @@ export default (props) => {
 
     return(
         
-        <canvas 
-        
-        width={window.innerWidth-50} 
+        <canvas         
+        width={window.innerWidth} 
         height={window.innerHeight-50} 
         ref={reactCanvas} {...rest} />
         

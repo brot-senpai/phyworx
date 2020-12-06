@@ -5,8 +5,6 @@ import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -15,22 +13,16 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
 
 import Home from '../home/home';
-//import ThreeApp from '../three_app/threeApp';
 import PhysicsWorld from '../babylon/physworld/physworld';
-//import BabylonApp from '../babylon/particleSun';
-//import Grid from '../babylon/grid';
-import DynamicGrid from '../babylon/dynamicGrid';
 import GLB from '../babylon/glbLoader';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
+import Sigma from '../../img/sigma.svg';
 
 import {
-    //BrowserRouter as Router,
     Switch,
     Route,
     Link, 
@@ -115,7 +107,7 @@ export default function PersistentDrawerLeft() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position="absolute"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -153,31 +145,30 @@ export default function PersistentDrawerLeft() {
           <ListItemIcon>
               <HomeIcon />
           </ListItemIcon>
-          <ListItemText >Home</ListItemText>          
-        </ListItem>
-        </Link>
-        <Link to="/phyworx/babylon" style={{ textDecoration: 'none' }}>
-        <ListItem button key='Babylon' >        
-          <ListItemIcon >
-              <img src={ BabylonIcon } alt="babylonicon" height="25"/>
-          </ListItemIcon>
-          <ListItemText >Babylon</ListItemText>        
+          <ListItemText style={{color:"black"}}>Home</ListItemText>          
         </ListItem>
         </Link>
         <Divider />
-        <Link to="/phyworx/physims" style={{ textDecoration: 'none' }}>
-        <ListItem button key='Three'>        
+        <Link to="/phyworx/math" style={{ textDecoration: 'none' }}>
+        <ListItem button key='Math' >        
+          <ListItemIcon >
+              <img src={ Sigma } alt="sigma" height="25"/>
+          </ListItemIcon>
+          <ListItemText style={{color:"black"}}>Math</ListItemText>        
+        </ListItem>
+        </Link>
+        <Link to="/phyworx/physics" style={{ textDecoration: 'none' }}>
+        <ListItem button key='Physics'>        
           <ListItemIcon>
               <img src={ Atom } alt="atomicon" height="25"/>
           </ListItemIcon>
-          <ListItemText >Physic Sims</ListItemText>        
+          <ListItemText style={{color:"black"}}>Physics</ListItemText>        
         </ListItem>
         </Link>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Switch>
-            
+        <Switch>            
             <Route exact path="/phyworx" >
             <Home />
             </Route>      

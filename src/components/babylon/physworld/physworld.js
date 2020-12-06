@@ -7,14 +7,9 @@ import { ArcRotateCamera,
     Mesh,
     Texture,
     BackgroundMaterial, 
-    PhysicsImpostor,
-    CannonJSPlugin,
     } from '@babylonjs/core';
-import { Button,
-      } from "@babylonjs/gui";
 import { GridMaterial } from "@babylonjs/materials/grid";
 import SceneComponent from '../sceneComponent';
-import Menu from './menu';
 import * as CANNON from 'cannon';
 import Collision from './collision';
 window.CANNON = CANNON;
