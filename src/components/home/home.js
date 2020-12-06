@@ -57,8 +57,9 @@ const onSceneReady = scene =>{
     p1mat.emissiveColor = new Color3.White();
     p1.material = p1mat;
     p1.bakeCurrentTransformIntoVertices();
-    p1.position.x = Math.sin(alpha)*10;
-    p1.position.z = Math.cos(alpha)*10;
+    p1.position.x = Math.sin(gamma)*10;
+    p1.position.y = Math.cos(gamma)*9;
+    p1.position.z = Math.cos(gamma)*10;
     p1.computeWorldMatrix(true);
     var t1= new TrailMesh('new', p1, scene, .25, 250, true);
     var s1 = new StandardMaterial('sourceMat', scene);
@@ -74,8 +75,9 @@ const onSceneReady = scene =>{
     p2mat.emissiveColor = new Color3.White();
     p2.material = p2mat;
     p2.bakeCurrentTransformIntoVertices();
-    p2.position.x = Math.sin(alpha)*10;
-    p2.position.z = Math.cos(alpha)*10;
+    p2.position.x = Math.cos(alpha)*-10;
+    p2.position.y = Math.sin(alpha)*-9;
+    p2.position.z = Math.sin(alpha)*10;
     p2.computeWorldMatrix(true);
     var t2 = new TrailMesh('new', p2, scene, .25, 250, true);
     var s2 = new StandardMaterial('sourceMat', scene);
@@ -91,7 +93,7 @@ const onSceneReady = scene =>{
     p3.material = p3mat;
     p3.bakeCurrentTransformIntoVertices();
     p3.position.x = Math.sin(alpha)*10;
-    p3.position.z = Math.cos(alpha)*10;
+    p3.position.z = Math.cos(alpha)*13;
     p3.computeWorldMatrix(true);
     var trail = new TrailMesh('new', p3, scene, .25, 250, true);
     var sourceMat = new StandardMaterial('sourceMat', scene);

@@ -54,3 +54,12 @@
   overflow: hidden;
   
 }
+
+.footer{
+  font-size: 10px;
+  bottom: 1;
+  left: 1;
+  height:10;
+  padding: 0;
+  margin: 0;
+}
