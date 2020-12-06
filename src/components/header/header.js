@@ -16,8 +16,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
 
-//import Home from '../home/home';
-import ThreeApp from '../three_app/threeApp';
+import Home from '../home/home';
+//import ThreeApp from '../three_app/threeApp';
 import PhysicsWorld from '../babylon/physworld/physworld';
 //import BabylonApp from '../babylon/particleSun';
 //import Grid from '../babylon/grid';
@@ -186,8 +186,9 @@ export default function MiniDrawer() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
+            
             <Route exact path="/phyworx" >
-            <DynamicGrid />
+            <Home />
             </Route>      
             <Route path="/phyworx/babylon" >
               <GLB />
