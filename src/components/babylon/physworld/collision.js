@@ -5,6 +5,8 @@ import {
     Mesh,
     PhysicsImpostor,
     StandardMaterial,
+    Texture,
+    BackgroundMaterial
     } from '@babylonjs/core';
 import { 
     AdvancedDynamicTexture,
@@ -32,7 +34,7 @@ export default (scene) =>{
   function play(){
     
     var rect1 = new Rectangle();
-    rect1.width = 0.1;
+    rect1.width = 0.2;
     rect1.height = "20px";
     rect1.cornerRadius = 20;
     rect1.color = "red";
@@ -43,7 +45,7 @@ export default (scene) =>{
     rect1.linkOffsetY = -50;
 
     var rect2 = new Rectangle();
-    rect2.width = 0.1;
+    rect2.width = 0.2;
     rect2.height = "20px";
     rect2.cornerRadius = 20;
     rect2.color = "red";
@@ -53,13 +55,14 @@ export default (scene) =>{
     
     rect2.linkOffsetY = -50;
 
-    
+    var backgroundMaterial = new StandardMaterial("backgroundMaterial", scene);
     var sphere1 = Mesh.CreateSphere("sphere1", 16, 1, scene);
-    sphere1.material = material;
+    backgroundMaterial.diffuseTexture = new Texture(process.env.PUBLIC_URL + '/assets/osu.png', scene);
+    sphere1.material = backgroundMaterial;
     sphere1.position = new Vector3(-2, 2, 0);
-    sphere1.color = new Color3(1, 0, 0);
+    sphere1.rotate(new Vector3(0, 0, 4), 3)
     sphere1.physicsImpostor = new PhysicsImpostor(sphere1, PhysicsImpostor.SphereImpostor,
-      {mass:1, restitution: 1.0, friction:0}, scene);
+      {mass:1.5, restitution: 1.0, friction:0}, scene);
     sphere1.physicsImpostor.setLinearVelocity(new Vector3(velocity, 0, 0));
     
     rect1.linkWithMesh(sphere1);   
@@ -67,8 +70,12 @@ export default (scene) =>{
     label1.text = sphere1.physicsImpostor.getLinearVelocity()._x +' m/s';
     rect1.addControl(label1)
 
+    var bgMat = new StandardMaterial("bg2", scene);
+    bgMat.diffuseTexture = new Texture(process.env.PUBLIC_URL + '/assets/Mi.png', scene);
     var sphere2 = Mesh.CreateSphere("sphere1", 16, 1, scene);
     sphere2.position = new Vector3(2, 2, 0);
+    sphere2.material = bgMat;
+    sphere2.rotate(new Vector3(0, 0, 4), 3);
     sphere2.physicsImpostor = new PhysicsImpostor(sphere2, PhysicsImpostor.SphereImpostor,
       {mass:1, restitution: 1.0, friction:0}, scene);
 
