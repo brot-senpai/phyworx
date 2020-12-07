@@ -46,27 +46,7 @@ const onSceneReady = scene =>{
         {diameter: 5, segments: 128}, scene);
     
 
-    ground.computeWorldMatrix(true);
-    var ground_worldMatrix = ground.getWorldMatrix();
-    var ground_vertexData = ground.getVerticesData("normal");
-    var groundNormal = new Vector3(ground_vertexData[0],
-        ground_vertexData[1], ground_vertexData[2]);
-    groundNormal = Vector3.TransformNormal(groundNormal, ground_worldMatrix);
-
-    var reflector = new Plane.FromPositionAndNormal(ground.position, 
-        groundNormal.scale(-1));
-    var mirrorMaterial = new StandardMaterial("mirror", scene)
-    mirrorMaterial.reflectionTexture = new MirrorTexture("mirror", 1024, scene, true);
-    mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
-	mirrorMaterial.reflectionTexture.renderList = [sphere];
-    mirrorMaterial.reflectionTexture.level = 1;
-    ground.material = mirrorMaterial;
-    //ground.material.alpha = 0.99;
-    ground.material.alphaMode = Engine.ALPHA_ONEONE;
-    ground.physicsImpostor = new PhysicsImpostor(ground, PhysicsImpostor.BoxImpostor, {
-        mass: 0,
-        restitution: 0.6
-    })
+    
 
     var alpha = Math.PI/30;
     
@@ -141,6 +121,27 @@ const onSceneReady = scene =>{
 
         
     }
+    ground.computeWorldMatrix(true);
+    var ground_worldMatrix = ground.getWorldMatrix();
+    var ground_vertexData = ground.getVerticesData("normal");
+    var groundNormal = new Vector3(ground_vertexData[0],
+        ground_vertexData[1], ground_vertexData[2]);
+    groundNormal = Vector3.TransformNormal(groundNormal, ground_worldMatrix);
+
+    var reflector = new Plane.FromPositionAndNormal(ground.position, 
+        groundNormal.scale(-1));
+    var mirrorMaterial = new StandardMaterial("mirror", scene)
+    mirrorMaterial.reflectionTexture = new MirrorTexture("mirror", 1024, scene, true);
+    mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
+	mirrorMaterial.reflectionTexture.renderList = [sphere];
+    mirrorMaterial.reflectionTexture.level = 1;
+    ground.material = mirrorMaterial;
+    //ground.material.alpha = 0.99;
+    ground.material.alphaMode = Engine.ALPHA_ONEONE;
+    ground.physicsImpostor = new PhysicsImpostor(ground, PhysicsImpostor.BoxImpostor, {
+        mass: 0,
+        restitution: 0.6
+    })
     
 
 

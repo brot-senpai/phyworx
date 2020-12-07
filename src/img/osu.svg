@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e81, 2020-09-07)"
+   sodipodi:docname="osu.svg">
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath88">
+      <rect
+         style="fill:#0000ff;fill-rule:evenodd;stroke-width:0.162635"
+         id="rect90"
+         width="31.225983"
+         height="36.430313"
+         x="377.61136"
+         y="-777.0354"
+         transform="scale(1,-1)" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="371.58906"
+     inkscape:cy="512.02779"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:window-width="1360"
+     inkscape:window-height="731"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid10"
+       empspacing="3" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g68"
+       transform="matrix(8.9663325,0,0,-8.9663325,-3400.1736,6945.4867)"
+       clip-path="url(#clipPath88)">
+      <path
+         d="m 401.17,766.12 -4.93,4.917 h -10.675 l -4.955,-4.958 v -17.553 l 4.955,-4.96 h 10.675 l 4.93,4.905 z m -15.489,-2.169 1.995,1.994 h 6.464 l 1.994,-1.994 v -13.292 l -1.994,-1.995 h -6.464 l -1.995,1.995 z"
+         fill="#bb0000"
+         id="path64" />
+      <path
+         d="m 7.9863,1.0723 -7.0586,7.0547 3e-5,23.359 7.0098,7.098 h 14.598 l 7.052,-7.064 V 8.125 l -7.006,-7.0527 h -14.596 z m 14.305,0.6367 6.598,6.6152 0.019,22.922 -6.662,6.664 H 8.2723 L 1.5628,31.1972 V 8.4122 l 6.709,-6.7011 14.02,-0.0019 z m -10.633,8.316 -1.9529,1.952 v 15.796 l 1.9099,1.911 h 7.272 l 1.892,-1.895 V 12.006 l -1.98,-1.981 z m 0.277,0.639 h 6.627 l 1.58,1.58 v 15.277 l -1.522,1.522 h -6.746 l -1.498,-1.496 V 12.223 Z"
+         transform="matrix(0.8,0,0,-0.8,378.71,773.2)"
+         fill="#666666"
+         id="path66"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccc" />
+    </g>
+  </g>
+</svg>

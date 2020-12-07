@@ -21,6 +21,8 @@ import GLB from '../babylon/glbLoader';
 import Atom from '../../img/atom.svg';
 import BabylonIcon from '../../img/babylon_gray2.svg';
 import Sigma from '../../img/sigma.svg';
+import Buckeye from '../babylon/physworld/buckeye';
+import BuckeyeLogo from  '../../img/osu.svg';
 
 import {
     Switch,
@@ -165,6 +167,14 @@ export default function PersistentDrawerLeft() {
           <ListItemText style={{color:"black"}}>Physics</ListItemText>        
         </ListItem>
         </Link>
+        <Link to="/phyworx/buckeye" style={{ textDecoration: 'none' }}>
+        <ListItem button key='Buckeye'>        
+          <ListItemIcon>
+              <img src={ BuckeyeLogo } alt="atomicon" height="25"/>
+          </ListItemIcon>
+          <ListItemText style={{color:"black"}}>OSU</ListItemText>        
+        </ListItem>
+        </Link>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
@@ -177,7 +187,10 @@ export default function PersistentDrawerLeft() {
             </Route> 
             <Route path="/phyworx/physics" >
               <PhysicsWorld />
-            </Route>        
+            </Route>  
+            <Route path="/phyworx/buckeye">
+              <Buckeye/>
+            </Route>      
         </Switch>
         
       </main>
