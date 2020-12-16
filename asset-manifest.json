@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/phyworx/static/css/main.9c66da3f.chunk.css",
-    "main.js": "/phyworx/static/js/main.a99d034c.chunk.js",
-    "main.js.map": "/phyworx/static/js/main.a99d034c.chunk.js.map",
-    "runtime-main.js": "/phyworx/static/js/runtime-main.8c28ac98.js",
-    "runtime-main.js.map": "/phyworx/static/js/runtime-main.8c28ac98.js.map",
-    "static/js/2.7c3553db.chunk.js": "/phyworx/static/js/2.7c3553db.chunk.js",
-    "static/js/2.7c3553db.chunk.js.map": "/phyworx/static/js/2.7c3553db.chunk.js.map",
-    "static/js/3.39dfe005.chunk.js": "/phyworx/static/js/3.39dfe005.chunk.js",
-    "static/js/3.39dfe005.chunk.js.map": "/phyworx/static/js/3.39dfe005.chunk.js.map",
+    "main.js": "/phyworx/static/js/main.99917852.chunk.js",
+    "main.js.map": "/phyworx/static/js/main.99917852.chunk.js.map",
+    "runtime-main.js": "/phyworx/static/js/runtime-main.676d2567.js",
+    "runtime-main.js.map": "/phyworx/static/js/runtime-main.676d2567.js.map",
+    "static/js/2.9cfc330d.chunk.js": "/phyworx/static/js/2.9cfc330d.chunk.js",
+    "static/js/2.9cfc330d.chunk.js.map": "/phyworx/static/js/2.9cfc330d.chunk.js.map",
+    "static/js/3.146152c2.chunk.js": "/phyworx/static/js/3.146152c2.chunk.js",
+    "static/js/3.146152c2.chunk.js.map": "/phyworx/static/js/3.146152c2.chunk.js.map",
     "index.html": "/phyworx/index.html",
     "static/css/main.9c66da3f.chunk.css.map": "/phyworx/static/css/main.9c66da3f.chunk.css.map",
-    "static/js/2.7c3553db.chunk.js.LICENSE.txt": "/phyworx/static/js/2.7c3553db.chunk.js.LICENSE.txt",
+    "static/js/2.9cfc330d.chunk.js.LICENSE.txt": "/phyworx/static/js/2.9cfc330d.chunk.js.LICENSE.txt",
     "static/media/atom.1651bc53.svg": "/phyworx/static/media/atom.1651bc53.svg",
-    "static/media/babylon_gray2.a3cbb95f.svg": "/phyworx/static/media/babylon_gray2.a3cbb95f.svg",
     "static/media/osu.04a7bd3f.svg": "/phyworx/static/media/osu.04a7bd3f.svg",
+    "static/media/pde1.3dd4ad44.png": "/phyworx/static/media/pde1.3dd4ad44.png",
     "static/media/sigma.b3ee976d.svg": "/phyworx/static/media/sigma.b3ee976d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c28ac98.js",
-    "static/js/2.7c3553db.chunk.js",
+    "static/js/runtime-main.676d2567.js",
+    "static/js/2.9cfc330d.chunk.js",
     "static/css/main.9c66da3f.chunk.css",
-    "static/js/main.a99d034c.chunk.js"
+    "static/js/main.99917852.chunk.js"
   ]
 }
