@@ -10,6 +10,7 @@ import {
 import SceneComponent from '../../babylon/sceneComponent';
 import {points} from './points2';
 
+
 const CreateLine = (scene) =>{
   var camera = new ArcRotateCamera("Camera", 3 * Math.PI / 2, 
         3 * Math.PI / 8, 30, Vector3.Zero());
@@ -41,8 +42,9 @@ function firstO(){
   
   return(
     <div >
-      <div style={{fontSize:100, color:"black"}}>
-        Hello
+      <div style={{color:"black"}}>
+        
+        
       </div>      
       
       <SceneComponent style={{display:"block"}} antialias onSceneReady={CreateLine}
