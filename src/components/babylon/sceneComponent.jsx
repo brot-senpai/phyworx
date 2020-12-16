@@ -32,7 +32,7 @@ export default (props) => {
                 scene.getEngine().resize();
                 
             }
-
+            
             if(window){
                 window.addEventListener('resize', resize);
             }

@@ -19,10 +19,11 @@ import Home from '../home/home';
 import PhysicsWorld from '../babylon/physworld/physworld';
 import GLB from '../babylon/glbLoader';
 import Atom from '../../img/atom.svg';
-import BabylonIcon from '../../img/babylon_gray2.svg';
+//import BabylonIcon from '../../img/babylon_gray2.svg';
 import Sigma from '../../img/sigma.svg';
 import Buckeye from '../babylon/physworld/buckeye';
 import BuckeyeLogo from  '../../img/osu.svg';
+import Math from '../math/maf';
 
 import {
     Switch,
@@ -36,6 +37,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    
     display: 'flex',
   },
   appBar: {
@@ -75,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   content: {
+    
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
@@ -126,6 +129,7 @@ export default function PersistentDrawerLeft() {
           </IconButton>
         </Toolbar>
       </AppBar>
+     
       <HashRouter>
       <Drawer
         className={classes.drawer}
@@ -183,7 +187,7 @@ export default function PersistentDrawerLeft() {
             <Home />
             </Route>      
             <Route path="/phyworx/math" >
-              <GLB />
+              <Math />
             </Route> 
             <Route path="/phyworx/physics" >
               <PhysicsWorld />
