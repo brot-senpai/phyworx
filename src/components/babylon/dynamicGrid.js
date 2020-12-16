@@ -22,20 +22,51 @@ import { GridMaterial } from "@babylonjs/materials/grid";
 
 var lines = [];
 
+const makeRibbon = (props) =>{
+
+    const {scene, datas} = props;
+    const mat = new StandardMaterial("mat1", scene);
+  	mat.diffuseColor = new Color3(1.0, 0, 0.5);
+    mat.backFaceCulling = false;
+
+    
+    const data = datas[1].lines
+    var l = Object.keys(data).length
+    var s = Object.keys(data[0]).length
+    
+    const paths = [];
+    for(let i = 0; i<l; i++){
+
+        let path = [];
+        for(let j = 0; j < s; j++){
+        let x = data[i][j][0];
+        let y = data[i][j][1];
+        let u = data[i][j][2];
+        path.push(new Vector3(x, y, u));
+        }
+        paths.push(path);
+        MeshBuilder.CreateLines("path", {points:path})
+    }
+    const ribbon = MeshBuilder.CreateRibbon("ribbon", {pathArray: paths, sideOrientation: Mesh.DOUBLESIDE});
+    ribbon.material = mat;
+    return ribbon; 
+    
+}
+
 const DynamicGrid = (props) =>{
     
-    var {scene, data} = props;
+    var {scene, size} = props;
     
-    var camera = new ArcRotateCamera("ArcRotateCamera", 4.7, 1.2, 12, 
+/*     var camera = new ArcRotateCamera("ArcRotateCamera", 4.7, 1.2, 12, 
         new Vector3(0, 0, 0), scene);
     camera.setTarget(Vector3.Zero());
     const light = new HemisphericLight("light", new Vector3(1, 1, 0));
     const canvas = scene.getEngine().getRenderingCanvas();
-    camera.attachControl(canvas, true);
+    camera.attachControl(canvas, true); */
    
     
     
-    var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+/*     var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
     var act = true;
     var menuButton = new Button.CreateSimpleButton("menu", "Start");
     menuButton.color = "black";
@@ -58,24 +89,25 @@ const DynamicGrid = (props) =>{
     
    
     
-    light.intensity = 0.7;
+    light.intensity = 0.7; */
 
-    var size = 1;
+    //var size = 1;
     var axis = showAxis({scene, size});
-    var grids = gridGen({scene, size});
+    //var grids = gridGen({scene, size});
 
 
     //SliderControl({scene, axis, grids});
     //Animation({scene, axis, grids, data});
 
-    menuButton.onPointerDownObservable.add(function(){
+/*     menuButton.onPointerDownObservable.add(function(){
         if(act === true){
         scene.clearColor = Color3.White();
-        console.log(lines)
+       
         if(lines){
             lines.forEach(function(i){i.dispose()})
         }
-        Animation({scene, axis, grids, data});
+        //Animation({scene, axis, grids, data});
+        const ribbon = makeRibbon({scene, datas})
           act = false;
           ;}
         else{
@@ -83,7 +115,7 @@ const DynamicGrid = (props) =>{
           act = true;
         }
         
-      })
+      }) */
 }
 
 var Animation = (props) =>{

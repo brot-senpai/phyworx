@@ -9,7 +9,7 @@ import {
 
 
 
-export var Axis =(props)=> {
+var Axis =(props)=> {
 
   var { scene, size } = props;
 
@@ -48,9 +48,10 @@ export var Axis =(props)=> {
   var zChar = makeTextPlane("T", "blue", size / 5);
   zChar.position = new Vector3(size, 0.05 * size, 0.9 * size);
 
-/*   return [axisX, xChar,
+  return [axisX, xChar,
           axisY, yChar,
           axisZ, zChar
-        ] */
+        ] 
   }
 
+  export default Axis;

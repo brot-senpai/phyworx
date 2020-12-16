@@ -17,7 +17,7 @@ import HomeIcon from '@material-ui/icons/Home';
 
 import Home from '../home/home';
 import PhysicsWorld from '../babylon/physworld/physworld';
-import GLB from '../babylon/glbLoader';
+//import GLB from '../babylon/glbLoader';
 import Atom from '../../img/atom.svg';
 //import BabylonIcon from '../../img/babylon_gray2.svg';
 import Sigma from '../../img/sigma.svg';
