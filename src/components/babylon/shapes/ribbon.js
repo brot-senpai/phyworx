@@ -36,14 +36,15 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   const ribbon = MeshBuilder.CreateRibbon("ribbon", {pathArray: paths, sideOrientation: Mesh.DOUBLESIDE});
   ribbon.material = mat;
 
+  let l2 = charCurve.length;
   const cCurve = [];
-  for(let j = 0; j < l; j++){
+  for(let j = 0; j < l2; j++){
     let x = charCurve[j][0];
     let y = charCurve[j][1];
     let u = charCurve[j][2];
   cCurve.push(new Vector3(x, y, u));
   }
-  var cLine = MeshBuilder.CreateLines("path", {points:cCurve})
+  var cLine = MeshBuilder.CreateLines("charCurve", {points:cCurve})
   var hl = new HighlightLayer("hl1", scene);
   hl.addMesh(cLine, Color3.Yellow());
   cLine.edgesWidth = 2;

@@ -113,9 +113,7 @@ export default function RecipeReviewCard() {
       </Collapse>
     </Card>
     <Switch>
-      <Route path="/phyworx/pdefirst">
-          <PDE1st />
-      </Route>
+
     </Switch>
     </HashRouter>
     </div>
