@@ -23,8 +23,8 @@ import Atom from '../../img/atom.svg';
 import Sigma from '../../img/sigma.svg';
 import Buckeye from '../babylon/physworld/buckeye';
 import BuckeyeLogo from  '../../img/osu.svg';
-import Math from '../math/maf';
-
+import Math from '../math/maf2';
+import PDE1st from '../math/pde/pde_1stO'
 import {
     Switch,
     Route,
@@ -195,6 +195,9 @@ export default function PersistentDrawerLeft() {
             <Route path="/phyworx/buckeye">
               <Buckeye/>
             </Route>      
+            <Route path='/phyworx/pdefirst'>
+          <PDE1st />
+        </Route>
         </Switch>
         
       </main>

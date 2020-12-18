@@ -1,9 +1,8 @@
 import React from 'react';
-import { DynamicGrid } from '../../babylon/dynamicGrid';
+
 import { 
   Vector3, 
   ArcRotateCamera,
-  HemisphericLight,
   Color3,
   SpotLight,
   } from '@babylonjs/core';
@@ -31,10 +30,10 @@ const CreateLine = (scene) =>{
   
   const gridData = {
     xmin: Data.xinitial,
-    ymin: Data.umin,
+    ymin: Data.umin-1,
     zmin: Data.tinitial,
     xmax: Data.xfinal-5,
-    ymax: Data.umax,
+    ymax: Data.umax+1,
     zmax: Data.tfinal,
     resolution: 0.5,
   }
@@ -50,17 +49,15 @@ const CreateLine = (scene) =>{
   yzGrid.alpha = 0.2; 
 
   var axis = Axis({scene, size})
-  var axisX = axis[0]
+/*   var axisX = axis[0]
   var xChar = axis[1]
   var axisY = axis[2]
   var yChar = axis[3]
   var axisZ = axis[4] 
-  var zChar = axis[5]
-
+  var zChar = axis[5] */
+  
   var ribbon = Ribbon(scene, solution, charCurve, resolution);
   
-  //const size = 5;
-  //DynamicGrid({scene, size});
 }
 
 
@@ -70,14 +67,8 @@ function firstO(){
   
   return(
     <div >
-      <div style={{color:"black"}}>
-        
-        
-      </div>      
-      
       <SceneComponent style={{display:"block"}} antialias onSceneReady={CreateLine}
-        id='my-canvas' />
-      
+        id='my-canvas' />      
     </div>
   )
 }

@@ -6,8 +6,8 @@ const tileData = [
     title: 'First Order PDE',
     author: 'brot-sempai',
     compLink: './pde/pde_1stO.js',
-    linkPath: '/phyworx/math/pdefirst',
-    routePath: '/phyworx/math/pdefirst',
+    linkPath: '/phyworx/pdefirst',
+    routePath: '/phyworx/pdefirst',
   }
 ]
 

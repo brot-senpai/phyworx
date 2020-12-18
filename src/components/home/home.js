@@ -149,6 +149,8 @@ const onSceneReady = scene =>{
 }
 
 
+
+
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}

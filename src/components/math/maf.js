@@ -75,12 +75,12 @@ export default function SingleLineGridList() {
       <main>
         <div >
           
-      <Switch>
+      
         
         <Route path={tileData[0].routePath}>
           <PDE1st />
         </Route>
-        </Switch>
+        
         </div>
         </main>
       </HashRouter>

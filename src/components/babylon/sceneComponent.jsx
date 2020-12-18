@@ -9,7 +9,7 @@ export default (props) => {
         onRender, onSceneReady, ...rest } = props;
     
     useEffect(() =>{
-        if(reactCanvas.current){
+        
             const engine = new Engine(reactCanvas.current, antialias,
                 engineOptions, adaptToDeviceRatio);
             engine.resize();
@@ -42,7 +42,7 @@ export default (props) => {
                     window.removeEventListener('resize', resize);
                 }
             }
-        }
+        
     }, [reactCanvas])
 
     return(

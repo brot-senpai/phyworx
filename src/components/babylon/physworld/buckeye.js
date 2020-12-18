@@ -16,7 +16,6 @@ import {
     Button,
     Control,
     SelectionPanel,
-    InputText,
     TextBlock,
     Rectangle,
     } from "@babylonjs/gui";
@@ -30,7 +29,7 @@ const onSceneReady = scene =>{
     var camera = new ArcRotateCamera("ArcRotateCamera", 4.7, 1.2, 15, 
         new Vector3(0, 0, 0), scene);
     camera.setTarget(Vector3.Zero());
-    const light = new HemisphericLight("light", new Vector3(1, 1, 0));
+    new HemisphericLight("light", new Vector3(1, 1, 0));
     const canvas = scene.getEngine().getRenderingCanvas();
     camera.attachControl(canvas, true);
     var gravityVector = new Vector3(0, 0, 0);
@@ -135,7 +134,7 @@ function Collision (scene) {
     
     
 
-    var t = window.setInterval(timer, 100);
+    window.setInterval(timer, 100);
     function timer(){
       //label2.text = sphere2.physicsImpostor.getLinearVelocity()._x.toFixed(2) +' m/s';
       label1.text = sphere1.physicsImpostor.getLinearVelocity()._x.toFixed(2) +' m/s';

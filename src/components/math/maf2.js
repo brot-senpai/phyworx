@@ -1,94 +1,122 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-//import IconButton from '@material-ui/core/IconButton';
-//import InfoIcon from '@material-ui/icons/Info';
+import clsx from 'clsx';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import { red } from '@material-ui/core/colors';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PDE1st from './pde/pde_1stO';
-import { tileData } from './tileData';
-
 import {
   Switch,
   Route,
   Link, 
   HashRouter,
-  useRouteMatch,
-  useParams
+
 } from "react-router-dom";
 
-var w = window.innerWidth;
-var h = window.innerHeight;
+import pde from '../../img/pde1.png'
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    width:w,
-    height:h,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    maxWidth: 345,
   },
-  gridList: {
-    width: 500,
-    height: 450,
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
   },
-  icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+  container:{
+    paddingTop:50
   },
 }));
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-export default function TitlebarGridList() {
+export default function RecipeReviewCard() {
   const classes = useStyles();
-  let match = useRouteMatch();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <div>
-      <HashRouter>
-    <div className={classes.root}>
-      
-      <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-        {tileData.map((tile) => (
-          <Link to={tile.linkPath} key={tile.linkPath} >
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-            />
-          </GridListTile>
-          </Link>
-        ))}
-      </GridList>
-      <Switch>
-        
-        <Route path={tileData[0].routePath}>
+    <div className={classes.container}>
+    <HashRouter>
+    <Card className={classes.root}>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            1st
+          </Avatar>
+        }
+        title="First Order PDE"
+      />
+      <Link to="/phyworx/pdefirst">
+      <CardMedia
+        className={classes.media}
+        image={pde}
+        title="PDE1"
+      />
+      </Link>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          First Order Partial Differential Equations
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded,
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Details under construction</Typography>
+          <Typography paragraph>
+            
+          </Typography>
+          <Typography paragraph>
+            
+          </Typography>
+          <Typography paragraph>
+            
+          </Typography>
+          <Typography>
+            
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+    <Switch>
+      <Route path="/phyworx/pdefirst">
           <PDE1st />
-        </Route>
-      </Switch>      
-      
-    </div>
-          
+      </Route>
+    </Switch>
     </HashRouter>
     </div>
   );

@@ -17,7 +17,7 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   const steps = solution.length ;
   const s = steps * resolution;
   var l = solution[1].length;
-  console.log(l)
+
   
   const paths = [];
   for(let i = 0; i<steps; i++){
