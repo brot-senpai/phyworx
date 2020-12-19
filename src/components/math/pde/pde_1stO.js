@@ -20,9 +20,10 @@ import {
     } from "@babylonjs/gui";
 
 import SceneComponent from '../../babylon/sceneComponent';
-//import {data} from './points3';
+
 import GridGen from '../../babylon/grid/grid';
 import Data from './xsquared.json';
+//import Data from './points2.json';
 import Ribbon from '../../babylon/shapes/ribbon';
 import Axis from '../../babylon/axis/axis';
 
@@ -34,7 +35,8 @@ const CreateLine = (scene) =>{
   
   var camera = new ArcRotateCamera("ArcRotateCamera", -.85, .8, 8, 
         new Vector3(0, 0, 0), scene);
-    scene.clearColor = new Color3.Black();
+  
+    scene.clearColor = new Color3(0,0,0)
     const canvas = scene.getEngine().getRenderingCanvas();
     camera.attachControl(canvas, true);
     var light = new HemisphericLight("light", new Vector3(1, 1, 0));//SpotLight("spotLight", new Vector3(0, 4, 0), 
@@ -90,6 +92,7 @@ const CreateLine = (scene) =>{
   
   var ribbon = Ribbon(scene, solution, charCurve, resolution);
 
+  //camera.onViewMatrixChangedObservable.add(function(){console.log(camera.getViewMatrix())})
   
   
 }

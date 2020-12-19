@@ -13,6 +13,7 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   const mat = new StandardMaterial("mat1", scene);
   mat.diffuseColor = new Color3(0.5, 0, 0);
   mat.backFaceCulling = false;
+  
 
   const steps = solution.length ;
   const s = steps * resolution;
@@ -35,6 +36,8 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   } 
   const ribbon = MeshBuilder.CreateRibbon("ribbon", {pathArray: paths, sideOrientation: Mesh.DOUBLESIDE});
   ribbon.material = mat;
+  
+  
 
   let l2 = charCurve.length;
   const cCurve = [];

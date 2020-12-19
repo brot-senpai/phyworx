@@ -14,6 +14,7 @@ export default (props) => {
                 engineOptions, adaptToDeviceRatio);
             engine.resize();
             const scene = new Scene(engine, sceneOptions);
+            
             if(scene.isReady()){
                 props.onSceneReady(scene)
             }

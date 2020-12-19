@@ -47,7 +47,7 @@ var Axis =(props)=> {
   axisZ.color = new Color3(0, 0, 1);
   var zChar = makeTextPlane("T", "blue", size / 5);
   zChar.position = new Vector3(size, 0.05 * size, 0.9 * size);
-  console.log(axisX)
+ 
   
   return [axisX, xChar,
           axisY, yChar,

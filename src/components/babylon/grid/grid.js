@@ -3,6 +3,9 @@ import {
     Vector3, 
     Color3,
     MeshBuilder,
+    DynamicTexture,
+    Mesh,
+    StandardMaterial,
     } from '@babylonjs/core';
 
 let line;
@@ -65,10 +68,83 @@ var GridGen =(props)=>{
     }
     let yzGrid = MeshBuilder.CreateLineSystem("lineSystem", {lines: yz}, scene);
     //Animate(scene, xy, xz, yz)
+    const gridNumData = {
+      xmin: gridData.xmin,
+      ymin: gridData.ymin,
+      zmin: gridData.zmin,
+      xmax: gridData.xmax,
+      ymax: gridData.ymax,
+      zmax: gridData.zmax,
+      showminor: true,
+      showmajor: true,
+      resolution: 0.5,
+    }
+    gridNum({scene, gridNumData});
+
     return[xyGrid, xzGrid, yzGrid]
 }
 
-var Animate = (scene, xy, xz, yz) =>{
+var gridNum = (props) =>{
+
+  var {scene, gridNumData} = props;
+
+  var size = 3;
+  var steps = 1;
+  if(gridNumData.showminor){
+    steps = gridNumData.resolution;
+  }
+
+  var makeTextPlane = function(text, color, size) {
+
+    
+    var dynamicTexture = new DynamicTexture("DynamicTexture", 50, scene, true);
+    dynamicTexture.hasAlpha = true;
+    dynamicTexture.drawText(text, 10, 40, "bold 10px Arial", color , "transparent", true);
+    var plane = new Mesh.CreatePlane("TextPlane", size, scene, true);    
+    plane.material = new StandardMaterial("TextPlaneMaterial", scene);
+    plane.material.backFaceCulling = false;
+    //plane.material.specularColor = new Color3(1, 1, 1);
+    plane.material.diffuseTexture = dynamicTexture;
+  
+    return plane;
+  };     
+  
+
+
+  //x-axis
+  
+  for(let i = Math.floor(gridNumData.xmin); i<=Math.ceil(gridNumData.xmax); i+=steps){    
+    var xChar = makeTextPlane(` ${i}`, "red", size / 5);
+    xChar.position = new Vector3(i+0.1 , 
+      0, -gridNumData.resolution/2);
+  }
+
+  for(let i = Math.floor(gridNumData.ymin); i<=Math.ceil(gridNumData.ymax); i+=steps){  
+    if(i===0){
+      continue;
+    }  
+    var yChar = makeTextPlane(` ${i}`, "green", size / 5 );
+    yChar.position = new Vector3(0, 
+      i+0.1, -gridNumData.resolution/2);
+  }
+
+  for(let i = Math.floor(gridNumData.zmin); i<=Math.ceil(gridNumData.zmax); i+=steps){  
+    var zChar = makeTextPlane(` ${i}`, "blue", size / 5);
+    zChar.position = new Vector3(gridNumData.xmax+(gridNumData.resolution/2),
+      0, i+0.1);
+    //zChar.normal = Vector3.TransformNormal(new Vector3(1, 0, 0))
+  }
+  
+  
+  /* var yChar = makeTextPlane("U", "green", size / 5);
+  yChar.position = new Vector3(0, 0.9 * size, 0.1 * size);
+  var zChar = makeTextPlane("T", "blue", size / 5);
+  zChar.position = new Vector3(size, 0.05 * size, 0.9 * size); */
+}
+
+
+
+/* var Animate = (scene, xy, xz, yz) =>{
     
     const xyl = xy.length;
     const xzl = xz.length;
@@ -98,6 +174,6 @@ var Animate = (scene, xy, xz, yz) =>{
     }
 
 
-}
+} */
 
 export default GridGen;
