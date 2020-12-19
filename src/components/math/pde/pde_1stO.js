@@ -5,25 +5,44 @@ import {
   ArcRotateCamera,
   Color3,
   SpotLight,
-  HemisphericLight
+  HemisphericLight,
+  UniversalCamera,
   } from '@babylonjs/core';
+
+  import { 
+    AdvancedDynamicTexture,
+    Button,
+    Grid,
+    Control,
+    Slider,
+    SelectionPanel,
+    Rectangle,
+    } from "@babylonjs/gui";
 
 import SceneComponent from '../../babylon/sceneComponent';
 //import {data} from './points3';
 import GridGen from '../../babylon/grid/grid';
-import Data from './points1.json';
+import Data from './xsquared.json';
 import Ribbon from '../../babylon/shapes/ribbon';
 import Axis from '../../babylon/axis/axis';
 
+import CommandControl from '../../babylon/command/control';
+
+
+
 const CreateLine = (scene) =>{
+  
   var camera = new ArcRotateCamera("ArcRotateCamera", -.85, .8, 8, 
         new Vector3(0, 0, 0), scene);
-    scene.clearColor = Color3.Black();
+    scene.clearColor = new Color3.Black();
     const canvas = scene.getEngine().getRenderingCanvas();
     camera.attachControl(canvas, true);
     var light = new HemisphericLight("light", new Vector3(1, 1, 0));//SpotLight("spotLight", new Vector3(0, 4, 0), 
         //new Vector3(0, -1, 0), Math.PI , .5, scene);
-	light.diffuse = new Color3(1, 1, 1);
+  light.diffuse = new Color3(1, 1, 1);
+  
+  
+  CommandControl({scene});
 
   const solution = Data.solution;
   const resolution = Data.resolution;
@@ -70,6 +89,8 @@ const CreateLine = (scene) =>{
   zChar.position.z = Data.tfinal + .5;  
   
   var ribbon = Ribbon(scene, solution, charCurve, resolution);
+
+  
   
 }
 
