@@ -8,7 +8,8 @@ import {
         RadioButton,
         RadioGroup,
         } from "@babylonjs/gui";
-import { Locator } from '../../babylon/locator/locator';
+import { initLocator } from '../../babylon/locator/locator';
+
 var ControlGrid = (props) =>{
   var {scene} = props;
   var isOpen = false;
@@ -30,13 +31,13 @@ var ControlGrid = (props) =>{
   gbox.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
   gbox.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
   
-  var {cmdText, onRadio, offRadio, locText} = blockNames();
+  var {cmdText, locText} = blockNames();
   
   advancedTexture.addControl(gbox);
   advancedTexture.addControl(grid); 
   grid.addColumnDefinition(200,true);
-  grid.addColumnDefinition(50, true);
-  grid.addColumnDefinition(50, true);
+  grid.addColumnDefinition(100, true);
+  //grid.addColumnDefinition(50, true);
   grid.addRowDefinition(40, true);
   grid.addRowDefinition(25, true);
   grid.addRowDefinition(40, true);
@@ -66,11 +67,38 @@ var ControlGrid = (props) =>{
   tb2.height = "20px";
   tb2.color = "transparent";
 
+  var event = false;
+  var onRadio = new TextBlock();  
+  onRadio.text = "Off";
+  onRadio.color = "white";
+  onRadio.fontSize = "13";
+  onRadio.fontFamily = "Helvetica";
+  onRadio.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+
+  
+  var locatorButton = new Button();
+  locatorButton.addControl(onRadio);
+  locatorButton.onPointerDownObservable.add(function(){
+    if(event){
+      onRadio.text = "Off";
+      initLocator(scene, false);
+      event = false;
+    }
+    else{
+      onRadio.text = "On";
+      initLocator(scene, true);
+      event = true;
+    }
+  })
+
+  locatorButton.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+
   grid.addControl(tb2, 0, 1);           
   grid.addControl(cmdText, 0, 0);
   grid.addControl(onRadio, 1, 1); 
-  grid.addControl(offRadio, 1, 2);
+  //grid.addControl(offRadio, 1, 2);
   grid.addControl(locText, 2, 0);
+  grid.addControl(locatorButton, 2, 1);
   var collapse = function(){
     if(!isOpen){
       grid.width = "300px";
@@ -97,29 +125,31 @@ var ControlGrid = (props) =>{
   tb1.onPointerDownObservable.add(collapse);
   tb2.onPointerDownObservable.add(collapse);
 
-  let locator;
-  Locator({scene})
-  //var locationRadio = new RadioGroup("locator");
-  var locationRadioOff = new RadioButton("locator");
+
+  
+  
+ /*  var locationRadioOff = new RadioButton("locatoroff");
   locationRadioOff.width = "15px";
   locationRadioOff.height = "15px";
   locationRadioOff.color = "white";
 
-/*   locationRadioOff.onIsCheckedChangedObservable.add(function(){
-    if(locator){locator.setParent(null);}
-    
-     
-  }); */
+  locationRadioOff.onIsCheckedChangedObservable.add(function(){
+    initLocator(false);
+    locationRadioOn.isChecked = false;
+    locationRadioOff.isChecked = true;
+  }); 
 
-  var locationRadioOn = new RadioButton("locator");
+  var locationRadioOn = new RadioButton("locatoron");
   locationRadioOn.width = "15px";
   locationRadioOn.height = "15px";
   locationRadioOn.color = "white";
-/*   locationRadioOn.onIsCheckedChangedObservable.add(function(){
-    locator = Locator({scene});
-  }); */
+  locationRadioOn.onIsCheckedChangedObservable.add(function(){
+    initLocator(scene);
+    locationRadioOff.isChecked = false;
+
+  }); 
   grid.addControl(locationRadioOn, 2, 1);
-  grid.addControl(locationRadioOff, 2, 2);  
+  grid.addControl(locationRadioOff, 2, 2);  */ 
   
 }
 
@@ -146,13 +176,13 @@ const blockNames =()=>{
   offRadio.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 
   var locText = new TextBlock();
-  locText.text = "Point Location";
+  locText.text = "Point Locator";
   locText.color = "white";
   locText.fontSize = "20";
   locText.fontFamily = "Helvetica";
   locText.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 
-  return {cmdText, onRadio, offRadio, locText}
+  return {cmdText, offRadio, locText}
 }
 
 

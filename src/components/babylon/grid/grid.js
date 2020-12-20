@@ -22,7 +22,7 @@ var GridGen =(props)=>{
   
     var xy = [];
     //xy
-    for(let i = yStartPoint; i<=yRange;i+=resolution){
+    for(let i = Math.floor(yStartPoint); i<=Math.ceil(yRange);i+=resolution){
       xy.push([
         new Vector3(xStartPoint, i, 0),
         new Vector3(xRange, i, 0),        
@@ -54,7 +54,7 @@ var GridGen =(props)=>{
     //yz
      
     var yz = [];
-    for(let i = yStartPoint; i<=yRange;i+=resolution){
+    for(let i = Math.floor(yStartPoint); i<=Math.ceil(yRange);i+=resolution){
       yz.push([
         new Vector3(0, i, zStartPoint),
         new Vector3(0, i, zRange)
