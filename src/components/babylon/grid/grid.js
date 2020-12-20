@@ -175,5 +175,5 @@ var gridNum = (props) =>{
 
 
 } */
-
+//scene.onPointerObservable.add(function(){console.log(sphere.getPositionExpressedInLocalSpace())})
 export default GridGen;

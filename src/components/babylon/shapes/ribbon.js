@@ -29,6 +29,7 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
         let y = solution[i][j][1];
         let u = solution[i][j][2];
       path.push(new Vector3(x, y, u));
+      
       }
       paths.push(path);
       if(i%s===0){
@@ -51,7 +52,7 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   var hl = new HighlightLayer("hl1", scene);
   hl.addMesh(cLine, Color3.Yellow());
   cLine.edgesWidth = 2;
-  return ribbon; 
+  return {ribbon}; 
   
 }
 
