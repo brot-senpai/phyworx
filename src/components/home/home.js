@@ -14,7 +14,7 @@ import { ArcRotateCamera,
     Sound,
 } from '@babylonjs/core';
 import SceneComponent from '../babylon/sceneComponent';
-import {Howl, Howler} from 'howler';
+
 
 
 
@@ -49,13 +49,7 @@ const onSceneReady = scene =>{
     var sphere = MeshBuilder.CreateSphere("sphere", 
         {diameter: 5, segments: 128}, scene);
     
-    var sound = new Howl({
-        src: ['../../img/MMV.mp3'],
-        autoplay: true,
-        loop: true,
-    });
-    sound.play()
-    Howler.volume(0.5);
+    
 
     var alpha = Math.PI/30;
     
@@ -163,6 +157,9 @@ const onSceneReady = scene =>{
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        id='my-canvas' />
+        id='my-canvas' >
+        
+        </SceneComponent>
+        
     </div>
 )
