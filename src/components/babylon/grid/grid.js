@@ -1,14 +1,13 @@
 
 import { 
     Vector3, 
-    Color3,
     MeshBuilder,
     DynamicTexture,
     Mesh,
     StandardMaterial,
     } from '@babylonjs/core';
 
-let line;
+
 
 var GridGen =(props)=>{
     const {scene, gridData} = props;
@@ -94,16 +93,17 @@ var gridNum = (props) =>{
     steps = gridNumData.resolution;
   }
 
-  var makeTextPlane = function(text, color, size) {
+  var makeTextPlane = function(text, color, size, rotate) {
 
     
     var dynamicTexture = new DynamicTexture("DynamicTexture", 50, scene, true);
     dynamicTexture.hasAlpha = true;
     dynamicTexture.drawText(text, 10, 40, "bold 10px Arial", color , "transparent", true);
-    var plane = new Mesh.CreatePlane("TextPlane", size, scene, true);    
+    var plane = Mesh.CreatePlane("TextPlane", size, scene, true);    
     plane.material = new StandardMaterial("TextPlaneMaterial", scene);
+    if(rotate){plane.rotation = new Vector3(0, -1, 0);}
+    
     plane.material.backFaceCulling = false;
-    //plane.material.specularColor = new Color3(1, 1, 1);
     plane.material.diffuseTexture = dynamicTexture;
   
     return plane;
@@ -114,7 +114,7 @@ var gridNum = (props) =>{
   //x-axis
   
   for(let i = Math.floor(gridNumData.xmin); i<=Math.ceil(gridNumData.xmax); i+=steps){    
-    var xChar = makeTextPlane(` ${i}`, "red", size / 5);
+    var xChar = makeTextPlane(` ${i}`, "red", size / 5, false);
     xChar.position = new Vector3(i+0.1 , 
       0, -gridNumData.resolution/2);
   }
@@ -123,57 +123,19 @@ var gridNum = (props) =>{
     if(i===0){
       continue;
     }  
-    var yChar = makeTextPlane(` ${i}`, "green", size / 5 );
+    var yChar = makeTextPlane(` ${i}`, "green", size / 5, false );
     yChar.position = new Vector3(0, 
       i+0.1, -gridNumData.resolution/2);
   }
 
   for(let i = Math.floor(gridNumData.zmin); i<=Math.ceil(gridNumData.zmax); i+=steps){  
-    var zChar = makeTextPlane(` ${i}`, "blue", size / 5);
+    var zChar = makeTextPlane(` ${i}`, "blue", size / 5, true);
     zChar.position = new Vector3(gridNumData.xmax+(gridNumData.resolution/2),
       0, i+0.1);
-    //zChar.normal = Vector3.TransformNormal(new Vector3(1, 0, 0))
   }
   
-  
-  /* var yChar = makeTextPlane("U", "green", size / 5);
-  yChar.position = new Vector3(0, 0.9 * size, 0.1 * size);
-  var zChar = makeTextPlane("T", "blue", size / 5);
-  zChar.position = new Vector3(size, 0.05 * size, 0.9 * size); */
+
 }
 
-
-
-/* var Animate = (scene, xy, xz, yz) =>{
-    
-    const xyl = xy.length;
-    const xzl = xz.length;
-    const yzl = yz.length;
-    const max = Math.max(xyl,xzl,yzl);
-    var counter = 0;
-    var interval = .2*1000;  
-    var myTimer = window.setInterval(timer, interval);
-    
-    function timer(){
-        if(counter<xyl){
-            line = MeshBuilder.CreateLines("lines", {points:xy[counter]}, scene);
-            line.color = new Color3.Black();
-        }
-        if(counter<xzl){
-            line = MeshBuilder.CreateLines("lines", {points:xz[counter]}, scene);
-            line.color = new Color3.Black();
-        }
-        if(counter<yzl){
-            line = MeshBuilder.CreateLines("lines", {points:yz[counter]}, scene);
-            line.color = new Color3.Black();
-        }
-        if(max===counter){
-            clearInterval(myTimer);
-        }
-        counter ++;
-    }
-
-
-} */
 //scene.onPointerObservable.add(function(){console.log(sphere.getPositionExpressedInLocalSpace())})
 export default GridGen;

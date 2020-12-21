@@ -10,10 +10,12 @@ import { ArcRotateCamera,
     Engine,
     PhysicsImpostor,
     Plane,
-    MirrorTexture
+    MirrorTexture, 
+    Sound,
 } from '@babylonjs/core';
 import SceneComponent from '../babylon/sceneComponent';
-
+import {Howl, Howler} from 'howler';
+import music from '../../img/m.wav';
 
 
 const onSceneReady = scene =>{
@@ -31,7 +33,8 @@ const onSceneReady = scene =>{
     light.intensity = 0.7; */
     var light = new SpotLight("spotLight", new Vector3(0, 4, 0), 
         new Vector3(0, -1, 0), Math.PI , .5, scene);
-	light.diffuse = new Color3(1, 0, 0);
+    light.diffuse = new Color3(1, 0, 0);
+    
     
     var environment = scene.createDefaultEnvironment({
         skyboxSize: 300
@@ -42,11 +45,17 @@ const onSceneReady = scene =>{
     ground.scaling = new Vector3(200, 1, 200);
     ground.position.y = environment.ground.position.y - (0.5 + 0.001)
 
+    
     var sphere = MeshBuilder.CreateSphere("sphere", 
         {diameter: 5, segments: 128}, scene);
     
-
-    
+    var sound = new Howl({
+        src: ['../../img/m.wav'],
+        autoplay: true,
+        loop: true,
+    });
+    sound.play()
+    Howler.volume(0.5);
 
     var alpha = Math.PI/30;
     

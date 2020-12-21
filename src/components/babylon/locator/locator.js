@@ -1,23 +1,14 @@
 import { 
-  Vector3, 
   Color3,
   MeshBuilder,
-  DynamicTexture,
-  Mesh,
   StandardMaterial,
-  PointerEventTypes,
   UtilityLayerRenderer, 
   PositionGizmo,
-  LinesMesh,
   } from '@babylonjs/core';
 import { 
         AdvancedDynamicTexture,
         Rectangle,
         TextBlock,
-        Button,
-        Control,
-        Slider,
-        SelectionPanel,
         } from "@babylonjs/gui";
 
 
@@ -43,7 +34,7 @@ var Locator = (props) =>{
 
   document.onkeydown = ()=>{
     gizmo.attachedMesh = !gizmo.attachedMesh ? ball : null
-        //console.log(sphere.getPositionExpressedInLocalSpace())
+
   }
 
   var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -73,7 +64,6 @@ var Locator = (props) =>{
 }
 
 var initLocator = (scene, toggle)=>{
-  console.log(scene);
   if(toggle){
     Locator({scene});
   }

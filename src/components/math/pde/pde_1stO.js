@@ -4,20 +4,10 @@ import {
   Vector3, 
   ArcRotateCamera,
   Color3,
-  SpotLight,
   HemisphericLight,
-  UniversalCamera,
   } from '@babylonjs/core';
 
-  import { 
-    AdvancedDynamicTexture,
-    Button,
-    Grid,
-    Control,
-    Slider,
-    SelectionPanel,
-    Rectangle,
-    } from "@babylonjs/gui";
+
 
 import SceneComponent from '../../babylon/sceneComponent';
 //import { Locator } from '../../babylon/locator/locator';
@@ -37,6 +27,7 @@ const CreateLine = (scene) =>{
         new Vector3(0, 0, 0), scene);
   camera.wheelPrecision = 10;
     scene.clearColor = new Color3(0,0,0)
+    
     const canvas = scene.getEngine().getRenderingCanvas();
     camera.attachControl(canvas, true);
     var light = new HemisphericLight("light", new Vector3(1, 1, 0));//SpotLight("spotLight", new Vector3(0, 4, 0), 
@@ -73,7 +64,7 @@ const CreateLine = (scene) =>{
   var axis = Axis({scene, size})
   var axisX = axis[0]
   var xChar = axis[1]
-  var axisY = axis[2]
+  //var axisY = axis[2]
   var yChar = axis[3]
   var axisZ = axis[4] 
   var zChar = axis[5] 
@@ -90,7 +81,7 @@ const CreateLine = (scene) =>{
   zChar.position.x = Data.xfinal + .5;
   zChar.position.z = Data.tfinal + .5;  
   
-  var {ribbon} = Ribbon(scene, solution, charCurve, resolution);
+  Ribbon(scene, solution, charCurve, resolution);
   //Locator({scene});
   
 
