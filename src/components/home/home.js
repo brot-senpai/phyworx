@@ -15,7 +15,7 @@ import { ArcRotateCamera,
 } from '@babylonjs/core';
 import SceneComponent from '../babylon/sceneComponent';
 import {Howl, Howler} from 'howler';
-import music from '../../img/m.wav';
+
 
 
 const onSceneReady = scene =>{
@@ -50,7 +50,7 @@ const onSceneReady = scene =>{
         {diameter: 5, segments: 128}, scene);
     
     var sound = new Howl({
-        src: ['../../img/m.wav'],
+        src: ['../../img/MMV.mp3'],
         autoplay: true,
         loop: true,
     });
