@@ -14,7 +14,7 @@ import {
 
 let c;
 
-class classTest extends Component{
+class locatorClass extends Component{
   constructor(props){
     super(props);
     this.color = "white";
@@ -83,7 +83,7 @@ class classTest extends Component{
 
 function Locator(props){
   var { scene } = props;
-  c = new classTest({scene});
+  c = new locatorClass({scene});
   scene.onPointerObservable.add(function(){
     var coords = c.ball.getPositionExpressedInLocalSpace();
     c.label.text = "X: "+coords._x.toFixed(2).toString()+" "+

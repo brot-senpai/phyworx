@@ -28,14 +28,16 @@ export default (props) => {
                 }
                 scene.render();
             })
-
-            const resize = () =>{
+            
+            const resize = () =>{        
+ 
                 scene.getEngine().resize();
                 
             }
             
             if(window){
                 window.addEventListener('resize', resize);
+                
             }
             return () =>{
                 scene.getEngine().dispose();

@@ -48,47 +48,9 @@ const onSceneReady = scene =>{
     
     var sphere = MeshBuilder.CreateSphere("sphere", 
         {diameter: 5, segments: 128}, scene);
-    
-    
 
     var alpha = Math.PI/30;
     
-    // Create a mesh for the trail to follow.
-    
-    /* var p1 = MeshBuilder.CreateSphere("p1", 
-        {diameter: 1, segments: 128}, scene);
-    var p1mat = new StandardMaterial("p1", scene);
-    p1mat.emissiveColor = new Color3.White();
-    p1.material = p1mat;
-    p1.bakeCurrentTransformIntoVertices();
-    p1.position.x = Math.sin(gamma)*10;
-    p1.position.y = Math.cos(gamma)*9;
-    p1.position.z = Math.cos(gamma)*10;
-    p1.computeWorldMatrix(true);
-    var t1= new TrailMesh('new', p1, scene, .25, 250, true);
-    var s1 = new StandardMaterial('sourceMat', scene);
-    s1.emissiveColor = new Color3.White(); */
-    //sourceMat.diffuseColor = new Color3.Red();
-    //sourceMat.specularColor = new Color3.Black();
-    //t1.material = s1;
-    
-
-    /* var p2 = MeshBuilder.CreateSphere("p2", 
-        {diameter: 1, segments: 128}, scene);
-    var p2mat = new StandardMaterial("p2", scene);
-    p2mat.emissiveColor = new Color3.White();
-    p2.material = p2mat;
-    p2.bakeCurrentTransformIntoVertices();
-    p2.position.x = Math.cos(alpha)*-10;
-    p2.position.y = Math.sin(alpha)*-9;
-    p2.position.z = Math.sin(alpha)*10;
-    p2.computeWorldMatrix(true);
-    var t2 = new TrailMesh('new', p2, scene, .25, 250, true);
-    var s2 = new StandardMaterial('sourceMat', scene);
-    s2.emissiveColor = new Color3.White(); */
-    //sourceMat.diffuseColor = new Color3.Red();
-    //sourceMat.specularColor = new Color3.Black();
-    //t2.material = s2;
 
     var p3 = MeshBuilder.CreateSphere("p2", 
         {diameter: 1, segments: 128}, scene);
@@ -157,7 +119,7 @@ const onSceneReady = scene =>{
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        id='my-canvas' >
+        id='home-canvas' >
         
         </SceneComponent>
         

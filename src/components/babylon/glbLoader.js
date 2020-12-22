@@ -45,7 +45,7 @@ export default function Grid () {
     return(
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        id='my-canvas' />
+        id='glbloader-canvas' />
     </div>
     )
 }

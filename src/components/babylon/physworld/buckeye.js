@@ -197,6 +197,6 @@ function Collision (scene) {
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        id='my-canvas' />
+        id='buckeye-canvas' />
     </div>
 )

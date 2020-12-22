@@ -30,6 +30,6 @@ const onSceneReady = scene =>{
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        id='my-canvas' />
+        id='particlesun-canvas' />
     </div>
 )

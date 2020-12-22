@@ -31,6 +31,6 @@ const onRender = scene =>{
 export default () => (
     <div>
         <SceneComponent antialias onSceneReady={onSceneReady}
-        onRender={onRender} id='my-canvas' />
+        onRender={onRender} id='babylontest-canvas' />
     </div>
 )

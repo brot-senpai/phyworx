@@ -12,6 +12,8 @@ import {
 import SceneComponent from '../../babylon/sceneComponent';
 //import { Locator } from '../../babylon/locator/locator';
 import GridGen from '../../babylon/grid/grid';
+import GridClass from '../../babylon/grid/gridClass';
+
 //import Data from './xsquared.json';
 import Data from './points2.json';
 import Ribbon from '../../babylon/shapes/ribbon';
@@ -30,6 +32,9 @@ const CreateLine = scene =>{
     scene.clearColor = new Color3(0,0,0)
     
     const canvas = scene.getEngine().getRenderingCanvas();
+    var currentCanvasSizeWidth = canvas.style.width;
+    //console.log(currentCanvasSizeWidth)
+var currentCanvasSizeHeight = canvas.style.height;
     camera.attachControl(canvas, true);
     var light = new HemisphericLight("light", new Vector3(1, 1, 0));//SpotLight("spotLight", new Vector3(0, 4, 0), 
         //new Vector3(0, -1, 0), Math.PI , .5, scene);
@@ -44,12 +49,14 @@ const CreateLine = scene =>{
 
   
 
+   /* var c = document.getElementById("pde1sto-canvas");
   
+  window.addEventListener('resize', function () {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    scene.getEngine().resize();
+  }); */
 
-  /* scene.onPointerObservable.add(function(){
-    var coords = c.ball.getPositionExpressedInLocalSpace();
-    console.log(coords)
-  })  */
   const gridData = {
     xmin: Data.xinitial,
     ymin: Data.umin-1,
@@ -58,17 +65,13 @@ const CreateLine = scene =>{
     ymax: Data.umax+1,
     zmax: Data.tfinal,
     resolution: 0.5,
+    alpha: 0.5,
   }
 
   var size = 1;
-  var grid = GridGen({scene,gridData});
+  var grid = new GridClass({scene,gridData});
   
-  var xyGrid = grid[0];
-  var xzGrid = grid[1];
-  var yzGrid = grid[2];
-  xyGrid.alpha = 0.2;
-  xzGrid.alpha = 0.2;
-  yzGrid.alpha = 0.2; 
+
 
   var axis = Axis({scene, size})
   var axisX = axis[0]
@@ -107,7 +110,7 @@ function firstO(){
   return(
     <div >
       <SceneComponent style={{display:"block"}} antialias onSceneReady={CreateLine}
-        id='my-canvas' />      
+        id='pde1sto-canvas' />      
     </div>
   )
 }
