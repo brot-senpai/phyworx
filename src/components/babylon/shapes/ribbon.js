@@ -33,10 +33,12 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
       }
       paths.push(path);
       if(i%s===0){
-        MeshBuilder.CreateLines("path", {points:path})}
+        var lines = MeshBuilder.CreateLines("path", {points:path})}
+        
   } 
   const ribbon = MeshBuilder.CreateRibbon("ribbon", {pathArray: paths, sideOrientation: Mesh.DOUBLESIDE});
   ribbon.material = mat;
+  
   
   
 

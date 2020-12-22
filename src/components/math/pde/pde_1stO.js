@@ -17,11 +17,12 @@ import Data from './points2.json';
 import Ribbon from '../../babylon/shapes/ribbon';
 import Axis from '../../babylon/axis/axis';
 
+
 import CommandControl from '../../babylon/command/control';
 
 
 
-const CreateLine = (scene) =>{
+const CreateLine = scene =>{
   
   var camera = new ArcRotateCamera("ArcRotateCamera", -.85, .8, 8, 
         new Vector3(0, 0, 0), scene);
@@ -40,7 +41,15 @@ const CreateLine = (scene) =>{
   const solution = Data.solution;
   const resolution = Data.resolution;
   const charCurve = Data.umaxcurve;
+
   
+
+  
+
+  /* scene.onPointerObservable.add(function(){
+    var coords = c.ball.getPositionExpressedInLocalSpace();
+    console.log(coords)
+  })  */
   const gridData = {
     xmin: Data.xinitial,
     ymin: Data.umin-1,

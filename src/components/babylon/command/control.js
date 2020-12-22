@@ -8,7 +8,8 @@ import {
         ColorPicker,
         } from "@babylonjs/gui";
 import { Color3 } from '@babylonjs/core';
-import { initLocator } from '../../babylon/locator/locator';
+//import { initLocator } from '../../babylon/locator/locator';
+import { Locator, deleteLocator } from '../locator/locator';
 
 var ControlGrid = (props) =>{
   var {scene} = props;
@@ -66,12 +67,13 @@ var ControlGrid = (props) =>{
   locatorButton.onPointerDownObservable.add(function(){
     if(event){
       onRadio.text = "Off";
-      initLocator(scene, false);
+      deleteLocator();
       event = false;
     }
     else{
       onRadio.text = "On";
-      initLocator(scene, true);
+      Locator({scene});
+      
       event = true;
     }
   })
