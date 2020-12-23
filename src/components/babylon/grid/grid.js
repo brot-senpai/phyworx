@@ -83,6 +83,57 @@ var GridGen =(props)=>{
     return[xyGrid, xzGrid, yzGrid]
 }
 
+/* var gridNum2 = (props) =>{
+
+  var {scene, gridNumData} = props;
+
+  var size = 3;
+  var steps = 1;
+  if(gridNumData.showminor){
+    steps = gridNumData.resolution;
+  }
+
+  var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
+  var makeTextPlane = function (text, color, size, rotate) {
+    rect1 = new Rectangle();
+    rect1.width = 0.25;
+    rect1.height = "10px";
+    rect1.cornerRadius = 20;
+    rect1.color = "white";
+    rect1.thickness = .5;
+    rect1.background = "transparent";
+
+    label = new TextBlock();
+    label.text = text;
+    label.fontSize = "15";
+    label.color = color;
+    rect1.addControl(label);
+  }
+
+  for(let i = Math.floor(gridNumData.xmin); i<=Math.ceil(gridNumData.xmax); i+=steps){    
+    var xChar = makeTextPlane(` ${i}`, "red", size / 5, false);
+    xChar.position = new Vector3(i+0.1 , 
+      0, -gridNumData.resolution/2);
+  }
+
+  for(let i = Math.floor(gridNumData.ymin); i<=Math.ceil(gridNumData.ymax); i+=steps){  
+    if(i===0){
+      continue;
+    }  
+    var yChar = makeTextPlane(` ${i}`, "green", size / 5, false );
+    yChar.position = new Vector3(0, 
+      i+0.1, -gridNumData.resolution/2);
+  }
+
+  for(let i = Math.floor(gridNumData.zmin); i<=Math.ceil(gridNumData.zmax); i+=steps){  
+    var zChar = makeTextPlane(` ${i}`, "blue", size / 5, true);
+    zChar.position = new Vector3(gridNumData.xmax+(gridNumData.resolution/2),
+      0, i+0.1);
+  }
+
+} */
+
 var gridNum = (props) =>{
 
   var {scene, gridNumData} = props;

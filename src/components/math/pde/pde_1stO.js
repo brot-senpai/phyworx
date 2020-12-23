@@ -10,37 +10,34 @@ import {
 
 
 import SceneComponent from '../../babylon/sceneComponent';
-//import { Locator } from '../../babylon/locator/locator';
-import GridGen from '../../babylon/grid/grid';
+
 import GridClass from '../../babylon/grid/gridClass';
 
 //import Data from './xsquared.json';
 import Data from './points2.json';
 import Ribbon from '../../babylon/shapes/ribbon';
-import Axis from '../../babylon/axis/axis';
-
 
 import CommandControl from '../../babylon/command/control';
-
+import World from '../../babylon/world/world';
 
 
 const CreateLine = scene =>{
   
-  var camera = new ArcRotateCamera("ArcRotateCamera", -.85, .8, 8, 
-        new Vector3(0, 0, 0), scene);
-  camera.wheelPrecision = 10;
-    scene.clearColor = new Color3(0,0,0)
-    
-    const canvas = scene.getEngine().getRenderingCanvas();
-    var currentCanvasSizeWidth = canvas.style.width;
-    //console.log(currentCanvasSizeWidth)
-var currentCanvasSizeHeight = canvas.style.height;
-    camera.attachControl(canvas, true);
-    var light = new HemisphericLight("light", new Vector3(1, 1, 0));//SpotLight("spotLight", new Vector3(0, 4, 0), 
-        //new Vector3(0, -1, 0), Math.PI , .5, scene);
-  light.diffuse = new Color3(1, 1, 1);
+
+  const worldData = {
+    cameraDist: Data.tfinal,
+    backgroundColor: new Color3(0,0,0),
+  }
+  const world = new World({scene, worldData})
   
-  
+  world.engine.runRenderLoop(function () {
+    world.scene.render();
+  });
+
+  window.addEventListener("resize", function () {
+        world.engine.resize();
+        console.log("resize")
+  });
   CommandControl({scene});
 
   const solution = Data.solution;
@@ -59,10 +56,10 @@ var currentCanvasSizeHeight = canvas.style.height;
 
   const gridData = {
     xmin: Data.xinitial,
-    ymin: Data.umin-1,
+    ymin: Data.umin,
     zmin: Data.tinitial,
     xmax: Data.xfinal,
-    ymax: Data.umax+1,
+    ymax: Data.umax,
     zmax: Data.tfinal,
     resolution: 0.5,
     alpha: 0.5,
@@ -73,7 +70,7 @@ var currentCanvasSizeHeight = canvas.style.height;
   
 
 
-  var axis = Axis({scene, size})
+  /* var axis = Axis({scene, size})
   var axisX = axis[0]
   var xChar = axis[1]
   //var axisY = axis[2]
@@ -91,7 +88,7 @@ var currentCanvasSizeHeight = canvas.style.height;
   zChar.scaling.x = 2;
   zChar.scaling.y = 2;
   zChar.position.x = Data.xfinal + .5;
-  zChar.position.z = Data.tfinal + .5;  
+  zChar.position.z = Data.tfinal + .5; */  
   
   Ribbon(scene, solution, charCurve, resolution);
   //Locator({scene});

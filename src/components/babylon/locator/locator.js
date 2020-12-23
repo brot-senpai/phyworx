@@ -10,6 +10,8 @@ import {
   AdvancedDynamicTexture,
   TextBlock,
   Rectangle,
+  Control,
+  Button,
   } from "@babylonjs/gui";
 
 let c;
@@ -37,8 +39,7 @@ class locatorClass extends Component{
     this.ballMat.diffuseColor = new Color3(0.4, 0.4, 0.4);
     this.ballMat.specularColor = new Color3(0.4, 0.4, 0.4);
     this.ballMat.emissiveColor = Color3.Yellow();
-    this.ball.material = this.ballMat;
-    
+    this.ball.material = this.ballMat;    
   }
   Gizmo(){
     this.gizmo.attachedMesh = this.ball;
@@ -51,7 +52,7 @@ class locatorClass extends Component{
     this.rect1.width = "0.5em";
     this.rect1.height = "40px";
     this.rect1.cornerRadius = 20;
-    this.rect1.color = this.color;
+    this.rect1.color = "transparent";
     this.rect1.thickness = 0.5;
     this.rect1.background = "transparent";
     this.advancedTexture.addControl(this.rect1);
@@ -60,7 +61,8 @@ class locatorClass extends Component{
 
     this.label.text = "X: U: T: ";
     this.label.fontSize = "15px";
-    this.rect1.addControl(this.label);      
+    this.label.color = this.color;
+    this.rect1.addControl(this.label);          
   }
 
   delete(){
@@ -78,9 +80,7 @@ class locatorClass extends Component{
     return;
     
   }
-
 }
-
 function Locator(props){
   var { scene } = props;
   c = new locatorClass({scene});
@@ -90,7 +90,6 @@ function Locator(props){
       " U: "+coords._y.toFixed(2).toString()+" "+
       " T: "+coords._z.toFixed(2).toString();
   })
-
 }
 
 function deleteLocator(){
@@ -99,4 +98,28 @@ function deleteLocator(){
   }
 }
 
-export { Locator, deleteLocator };
+function locatorGUI(textColor){
+  var locText = new TextBlock();
+  locText.text = "Point Explorer";
+  locText.color = textColor;
+  locText.fontSize = "18";
+  locText.fontFamily = "Helvetica";
+  locText.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+  locText.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
+
+  var onRadio = new TextBlock();
+  onRadio.text = "Off";
+  onRadio.color = textColor;
+  onRadio.fontSize = "13";
+  onRadio.fontFamily = "Helvetica";
+  onRadio.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+
+  var locatorButton = new Button();
+  locatorButton.cornerRadius = 2.5
+  locatorButton.addControl(onRadio);
+  locatorButton.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+
+  return {locText, locatorButton, onRadio};
+}
+
+export { Locator, deleteLocator, locatorGUI };
