@@ -50,7 +50,7 @@ class locatorClass extends Component{
   
   Coords(){
     this.rect1.width = "0.5em";
-    this.rect1.height = "40px";
+    this.rect1.height = "30px";
     this.rect1.cornerRadius = 20;
     this.rect1.color = "transparent";
     this.rect1.thickness = 0.5;
@@ -102,7 +102,7 @@ function locatorGUI(textColor){
   var locText = new TextBlock();
   locText.text = "Point Explorer";
   locText.color = textColor;
-  locText.fontSize = "18";
+  locText.fontSize = "13";
   locText.fontFamily = "Helvetica";
   locText.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
   locText.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;

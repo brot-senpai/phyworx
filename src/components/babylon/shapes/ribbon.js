@@ -24,7 +24,7 @@ const makeRibbon = (scene, solution, charCurve, resolution) =>{
   for(let i = 0; i<steps; i++){
 
       let path = [];
-      for(let j = 0; j < l; j++){
+      for(let j = 0; j < l; ++j){
         let x = solution[i][j][0];
         let y = solution[i][j][1];
         let u = solution[i][j][2];

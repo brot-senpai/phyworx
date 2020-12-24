@@ -121,10 +121,11 @@ import Axis from '../axis/axis';
       var dynamicTexture = new DynamicTexture("text", 50, this.scene, true);
       dynamicTexture.hasAlpha = true;
       dynamicTexture.drawText(text, 10, 40, "15px Arial", color, "transparent", true);
-      
       var plane = Mesh.CreatePlane("textplane", size, this.scene, true);
       var planeMat = new StandardMaterial("textplanematerial", this.scene);
       planeMat.alpha = this.numAlpha;
+      planeMat.emissiveColor = new Color3(1, 1, 1);
+      planeMat.diffuseColor = new Color3(1, 1, 1);
       plane.material = planeMat;
       if(rotate){ plane.rotation = rotate;};
       plane.material.backFaceCulling = false;
@@ -141,6 +142,7 @@ import Axis from '../axis/axis';
     }
     yNum(){
       for(let i = this.yi; i <= this.yf; i+=this.resolution){
+        if(i===0){continue;}
         var yChar = this.makeTextPlane(`${i}`, "green", this.size /5, false);
         yChar.position = new Vector3( 0, i+0.1, -this.resolution/2);
       }

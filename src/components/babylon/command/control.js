@@ -11,24 +11,26 @@ import { Color3 } from '@babylonjs/core';
 //import { initLocator } from '../../babylon/locator/locator';
 import { Locator, deleteLocator, locatorGUI } from '../locator/locator';
 
+
+
 var ControlGrid = (props) =>{
   var {scene} = props;
   var isOpen = false;
-  var textColor = "white";
-  var controlWidth = "275px";
+  var textColor = "yellow";
+  var controlWidth = "250px";
   var controlHeight = "250px";
   var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
   
   var grid = new Grid();
   grid.background = "transparent";
   grid.width = controlWidth;
-  grid.height = "35px";
+  grid.height = "30px";
   grid.horizontalAlignment = Control.HORIZONTAL_ALIGNMENT_LEFT;
   grid.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 
   var gbox = new Rectangle();
   gbox.width = controlWidth
-  gbox.height = "35px"
+  gbox.height = "30px"
   gbox.cornerRadius = 2.5;
   gbox.alpha = 0.5
   gbox.color = "transparent"
@@ -39,9 +41,8 @@ var ControlGrid = (props) =>{
   
   advancedTexture.addControl(gbox);
   advancedTexture.addControl(grid); 
-  grid.addColumnDefinition(175,true);
-  grid.addColumnDefinition(100, true);
-  
+  grid.addColumnDefinition(150,true);
+  grid.addColumnDefinition(100, true);  
   grid.addRowDefinition(40, true);
   grid.addRowDefinition(30, true);
   grid.addRowDefinition(30, true);
@@ -60,7 +61,6 @@ var ControlGrid = (props) =>{
   tb2.background = "black";
 
   var event = false;
-
   
   
   var {locText, locatorButton, onRadio} = locatorGUI(textColor);
@@ -86,11 +86,12 @@ var ControlGrid = (props) =>{
   bgButton.onPointerDownObservable.add(function(){
     if(pickerEvent){
       grid.addControl(picker, 3, 0);    
-      
+      pickerText.text = "Close"
       pickerEvent = false;
     }
     else{
       grid.removeControl(picker, 3, 0);
+      pickerText.text = "Open"
       pickerEvent = true;
     }
   })
@@ -121,8 +122,8 @@ var ControlGrid = (props) =>{
       isOpen = true;
     }
     else{
-      grid.height = "35px";
-      gbox.height = "35px";
+      grid.height = "30px";
+      gbox.height = "30px";
       gbox.color = "transparent";
       grid.removeControl(tb1);
       grid.addControl(tb2, 0, 1);
@@ -139,13 +140,13 @@ const blockNames =(textColor)=>{
   var cmdText = new TextBlock();
   cmdText.text = "Dashboard";
   cmdText.color = textColor;
-  cmdText.fontSize = "20";
+  cmdText.fontSize = "15";
   cmdText.fontFamily = "Helvetica";
   
   cmdText.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 
   var pickerText = new TextBlock();
-  pickerText.text = "Pick";
+  pickerText.text = "Open";
   pickerText.color = textColor;
   pickerText.fontSize = "13";
   pickerText.fontFamily = "Helvetica";
@@ -153,7 +154,7 @@ const blockNames =(textColor)=>{
   var bgText = new TextBlock();
   bgText.text = "Background Color";
   bgText.color = textColor;
-  bgText.fontSize = "18";
+  bgText.fontSize = "13";
   bgText.fontFamily = "Helvetica"; 
 
   return {cmdText, bgText, pickerText}
