@@ -209,8 +209,16 @@ import Axis from '../axis/axis';
       zChar.position.x = this.xf + .5;
       zChar.position.z = this.zf + .5;
     }
+
+    getAlpha(){
+      return this.alpha;
+    }
+    setAlpha(a){
+      console.log(a);
+      this.alpha = a;
+    }
     render(){
-      return [this.xyGrid, this.xzGrid, this.yzGrid];
+      return 
     }
   }
 

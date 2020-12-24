@@ -7,6 +7,8 @@ import {
   TextBlock,
   Rectangle,
   ColorPicker,
+  Slider,
+  StackPanel,
   } from "@babylonjs/gui";
 import { Color3 } from '@babylonjs/core';
 import { Locator, deleteLocator, locatorGUI } from '../locator/locator';
@@ -59,7 +61,7 @@ class DashBoard extends React.Component{
     this.grid.addRowDefinition(40, true);
     this.grid.addRowDefinition(30, true);
     this.grid.addRowDefinition(30, true);
-    this.grid.addRowDefinition(30, true);
+    this.grid.addRowDefinition(30, true); 
     this.grid.addRowDefinition(30, true);
     this.grid.addRowDefinition(150, true);
   }
@@ -92,18 +94,19 @@ class DashBoard extends React.Component{
 function DBControl(props){
   
   var scene = props.scene;
+  var worldData = props.worldData;
   var db = new DashBoard({scene});
   headerControl(db);
   locatorControl(db);  
-  worldControl(db);
+  worldControl({db, worldData});
+
 } 
 
-var worldControl = (db) =>{
+
+
+var worldControl = (props) =>{
+  var {db, worldData} = props;
   var scene = db.scene;
-  const worldData = {
-    cameraDist: 10,
-    backgroundColor: new Color3(0,0,0),
-  }
   const world = new World({scene, worldData})
 
   var bgText = new TextBlock();
@@ -206,3 +209,71 @@ var headerControl = (db) =>{
 }
 
 export default DBControl;
+
+
+/* var gridControl = (props) =>{
+  var {grid, db} = props;
+
+  var gcEvent = false
+
+  var gcText = new TextBlock();
+  gcText.text = "Grid Options";
+  gcText.color = db.DBcolor;
+  gcText.fontSize = "13";
+  gcText.fontFamily = "Helvetica"; 
+  db.grid.addControl(gcText, 3, 0);
+
+  var gcButtonText = new TextBlock();
+  gcButtonText.text = "Open";
+  gcButtonText.color = db.DBcolor;
+  gcButtonText.fontSize = "13";
+  gcButtonText.fontFamily = "Helvetica"; 
+
+  var gcButton = new Button();
+  gcButton.cornerRadius = 2.5
+  gcButton.addControl(gcButtonText);
+  gcButton.onPointerDownObservable.add(function(){
+    if(gcEvent){
+      db.grid.removeControl(gcAlphaText, 4, 0);    
+      db.grid.removeControl(gcColorText, 4, 1);
+      db.grid.removeControl(slider, 5, 0);
+      gcButtonText.text = "Open"
+      gcEvent = false;
+    }
+    else{
+      db.grid.addControl(gcAlphaText, 4, 0);
+      db.grid.addControl(gcColorText, 4, 1);
+      db.grid.addControl(slider, 5, 0);
+      gcButtonText.text = "Close"
+      gcEvent = true;
+    }
+  })
+
+  db.grid.addControl(gcButton, 3, 1);
+  var gcAlphaText = new TextBlock();
+  gcAlphaText.text = "Grid Transparency";
+  gcAlphaText.color = db.DBcolor;
+  gcAlphaText.fontSize = "10";
+  gcAlphaText.fontFamily = "Helvetica";
+
+  var gcColorText = new TextBlock();
+  gcColorText.text = "Grid Color";
+  gcColorText.color = db.DBcolor;
+  gcColorText.fontSize = "10";
+  gcColorText.fontFamily = "Helvetica";
+
+  
+
+  var slider = new Slider();
+  slider.minimum = 0;
+  slider.maximum = 1;
+  slider.value = grid.getAlpha();
+  slider.color = db.DBcolor;
+  slider.height = "20px";
+  slider.width = "125px";
+  slider.onValueChangedObservable.add(function(value) {
+    grid.setAlpha(value);   
+  });
+
+
+} */
