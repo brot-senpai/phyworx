@@ -24,6 +24,7 @@ class World extends React.Component{
     this.camera = new ArcRotateCamera("ArcRotateCamera", -.85, .8, cameraDist, 
       new Vector3(0, 0, 0), this.scene);
     this.camera.attachControl(this.canvas, true);
+    this.camera.wheelPrecision = 10;
   }
   Background(color){
     this.scene.clearColor = color;

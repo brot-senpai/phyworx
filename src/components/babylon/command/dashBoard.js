@@ -24,7 +24,7 @@ class DashBoard extends React.Component{
     this.gbox = new Rectangle();
     this.advancedTexture.addControl(this.gbox);
     this.advancedTexture.addControl(this.grid);
-    this.DBcolor = "yellow";
+    this.DBcolor = props.worldData.DBColor;
     this.gridWidth = "250px";
     this.gridOpenHeight = "310px";
     this.gboxOpenHeight = "160px";
@@ -95,7 +95,7 @@ function DBControl(props){
   
   var scene = props.scene;
   var worldData = props.worldData;
-  var db = new DashBoard({scene});
+  var db = new DashBoard({scene, worldData});
   headerControl(db);
   locatorControl(db);  
   worldControl({db, worldData});
@@ -126,7 +126,8 @@ var worldControl = (props) =>{
   var pickerEvent = true;
   
   var bgButton = new Button();
-  bgButton.cornerRadius = 2.5
+  bgButton.cornerRadius = 2.5;
+  bgButton.color = db.DBcolor;
   bgButton.addControl(pickerText);
   bgButton.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
   bgButton.onPointerDownObservable.add(function(){
@@ -189,7 +190,7 @@ var headerControl = (db) =>{
     if(!DBisOpen){
       db.grid.height = db.gridOpenHeight;
       db.gbox.height = db.gboxOpenHeight;
-      db.gbox.color = "yellow";
+      db.gbox.color = db.DBcolor;
       db.grid.removeControl(db.tb2);
       db.grid.addControl(db.tb1, 0, 1);
       DBisOpen = true;

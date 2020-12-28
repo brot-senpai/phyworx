@@ -24,6 +24,9 @@ const CreateLine = scene =>{
   const solution = Data.solution;
   const resolution = Data.resolution;
   
+  var gridColor = new Color3(1, 1, 1);
+  var bgColor = new Color3(0, 0, 0);
+  var dbColor = "yellow";
 
   const gridData = {
     xmin: Data.xinitial,
@@ -34,12 +37,14 @@ const CreateLine = scene =>{
     zmax: Data.tfinal,
     resolution: 0.5,
     alpha: 0.5,
+    gridColor: gridColor,
   }
   const dz = Data.tfinal - Data.tinitial;
 
   const worldData = {
     cameraDist: dz,
-    backgroundColor: new Color3(0,0,0),
+    backgroundColor: bgColor,
+    DBColor:dbColor,
   }
   var grid = new GridClass({scene,gridData});  
   var curve = new Rect3D({scene, solution, resolution});

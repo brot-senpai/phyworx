@@ -115,7 +115,8 @@ function locatorGUI(textColor){
   onRadio.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 
   var locatorButton = new Button();
-  locatorButton.cornerRadius = 2.5
+  locatorButton.cornerRadius = 2.5;
+  locatorButton.color = textColor;
   locatorButton.addControl(onRadio);
   locatorButton.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
 

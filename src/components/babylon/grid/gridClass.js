@@ -36,7 +36,7 @@ import Axis from '../axis/axis';
       this.zf = Math.ceil(this.zmax);
       this.resolution = props.gridData.resolution;
       this.size = 3;
-      this.gridColr = new Color3(1, 1, 1);
+      this.gridColr = props.gridData.gridColor;
       this.xyPlane();
       this.xzPlane();
       this.yzPlane();
